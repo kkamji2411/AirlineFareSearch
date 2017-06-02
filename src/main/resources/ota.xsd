@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.opentravel.org/OTA/2003/05"
+           version="1.000"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.opentravel.org/OTA/2003/05">
+
+    <!-- Include all the schemas that you will be using -->
+    #if(${travel-segment}=='all' || ${travel-segment}=='air')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirBaggageRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirBaggageRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirBookModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirCheckIn.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirCheckInRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirCheckInRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirDemandTicketRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirDemandTicketRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirDetailsRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirDetailsRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirDisplayQueueRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirFareDisplayRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirFareDisplayRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirFlifoRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirFlifoRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirGetOfferRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirGetOfferRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirLowFareSearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirLowFareSearchRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirPreferences.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirPriceRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirPriceRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirRulesRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirRulesRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirScheduleRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirScheduleRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirSeatMapRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AirSeatMapRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AuthorizationRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_AuthorizationRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CancelRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CancelRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CommonPrefs.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CommonTypes.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='cruise')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseBookingDocumentRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseBookingDocumentRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseBookingHistoryRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinHoldRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinHoldRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinUnholdRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCabinUnholdRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCancellationPricingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCancellationPricingRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCategoryAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCategoryAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseDiningAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseDiningAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseFareAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseFareAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseFastSellRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseInfoRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseInfoRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseItineraryDescRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseItineraryDescRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePNR_UpdateNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePNR_UpdateNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePaymentRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePaymentRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePkgAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePkgAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePriceBookingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruisePriceBookingRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseSailAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseSailAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseShorexAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseShorexAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseSpecialServiceAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_CruiseSpecialServiceAvailRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DeleteRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DeleteRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='destactivity')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DestActivityCapabilitiesRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DestActivityCapabilitiesRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DestActivityResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DestActivityResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DestinationActivity.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='dynamicpkg')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgModifyNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgModifyNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_DynamicPkgModifyRQ.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ErrorRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_FileAttachmentNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_FileAttachmentNotifRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='golf')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseResModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseSearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfCourseSearchRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfFacilityInfoRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfFacilityInfoRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfRateRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GolfRateRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='ground')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundCancelRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundCancelRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundResNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundResNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundResRetrieveRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_GroundResRetrieveRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='hotel')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailGetRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailGetRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelBookingRuleNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelBookingRuleNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelBookingRuleRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelBookingRuleRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCacheChangeNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCacheChangeNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCacheChangeRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCacheChangeRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCommNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCommNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelContentDescription.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelDescriptiveContentNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelDescriptiveContentNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelDescriptiveInfoRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelDescriptiveInfoRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelEvent.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelEventRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelEventRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelGetMsgRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelGetMsgRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvAdjustRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvAdjustRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvBlockNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvBlockNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvBlockRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvBlockRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvCountNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvCountNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvCountRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvCountRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvSyncRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelInvSyncRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelPostEventNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelPostEventNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelPostEventRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelPostEventRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelPreferences.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_MeetingNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_MeetingNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_MeetingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_MeetingRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_TransientNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_TransientNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_TransientRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRFP_TransientRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRateAmountNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRateAmountNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRatePlan.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRatePlanNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRatePlanNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRatePlanRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRatePlanRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResModifyNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResModifyNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResModifyRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelReservation.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRoomListRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelRoomListRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelSearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelSearchRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStatsNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStatsNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStatsRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStatsRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStayInfoNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelStayInfoNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelSummaryNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_HotelSummaryNotifRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='insurance')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsuranceBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsuranceBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsuranceCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsurancePlanSearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsurancePlanSearchRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsuranceQuoteRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_InsuranceQuoteRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_Lists.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='loyalty')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyAccountCreateRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyAccountRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateCreateNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateCreateNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateCreateRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateCreateRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateRedemptionRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCertificateRedemptionRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_LoyaltyCommonTypes.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_NotifReportRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_NotifReportRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='ping')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PingRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='pkg')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgCostRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgCostRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgExtrasInfoRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgExtrasInfoRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PkgReservation.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='profile')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_Profile.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileCreateRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileCreateRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileMergeRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileMergeRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileModifyRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ProfileReadRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PurchaseItemRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_PurchaseItemRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='rail')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailBookModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailConfirmBookingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailConfirmBookingRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailFareQuoteRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailFareQuoteRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailIgnoreBookingRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailIgnoreBookingRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailPaymentRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailPaymentRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailPreferences.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailPriceRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailPriceRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailReadRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailResRetrieveDetailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailResRetrieveSummaryRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailScheduleRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailScheduleRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailShopRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_RailShopRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='misc')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ReadRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ResRetrieveRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_Reviews.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ReviewsNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ReviewsNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ReviewsRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ReviewsRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ScreenTextRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_ScreenTextRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_SimpleTypes.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='tour')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityBookRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityBookRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityCancelRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityCancelRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityCommonTypes.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivityResRetrieveRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivitySearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TourActivitySearchRS.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='travelitinerary')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TravelItineraryRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_TravelItineraryReadRQ.xsd"/>
+    #end
+    #if(${travel-segment}=='all' || ${travel-segment}=='veh')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehAvailRateRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehAvailRateRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCancelRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCancelRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCheckInRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCheckInRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCheckOutRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehCheckOutRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehExchangeRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehExchangeRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocDetailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocDetailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocDetailsNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocDetailsNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocSearchRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehLocSearchRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehModifyRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehModifyRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateRuleNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateRuleNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateRuleRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRateRuleRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResStatusNotifRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehResStatusNotifRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRetResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehRetResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/OTA_VehicleCommonTypes.xsd"/>
+    #end
+    #if(${travel-segment}=='codetable')
+    <xs:include schemaLocation="http://www.opentravel.org/2010A/OpenTravel_CodeTable.xsd"/> <!-- code table is not in 2013A public -->
+    #end
+    #if(${travel-segment}=='fastrez')
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezBinding.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_CancelRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_CancelRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_HotelAvailRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_HotelAvailRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_HotelResRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_HotelResRS.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_ReadRQ.xsd"/>
+    <xs:include schemaLocation="http://www.opentravel.org/2013B/FastRezOTA_SimpleTypes.xsd"/>
+    #end
+
+    <!-- This top level schema is required by JAXB -->
+    <xs:simpleType name="OTA">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

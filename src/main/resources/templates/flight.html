@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" ng-app>
+<head>
+    <title>flight</title>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+           console.log("start");
+        });
+    </script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <form>
+        <div class="form-group">
+
+            <label for="depCity">Departure City</label>
+            <div class="col-3">
+                <input type="text" class="form-control" id="depCity" th:value="ICN">
+            </div>
+
+            <label for="arrCity">Arrive City</label>
+            <div class="col-3">
+                <input type="text" class="form-control" id="arrCity" th:value="NRT">
+            </div>
+            <label for="depDate" >depDate</label>
+            <div class="col-3">
+                <div class="col-10">
+                    <input class="form-control" type="date" value="2017-08-19" id="depDate">
+                </div>
+            </div>
+            <label for="arrDate" >arrDate</label>
+            <div class="col-3">
+                <div class="col-10">
+                    <input class="form-control" type="date" value="2017-08-25" id="arrDate">
+                </div>
+            </div>
+
+            <div class="col-3" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="tripType" id="tripRT" autocomplete="off" th:value="RT" checked> 왕복
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="tripType" id="tripOW" th:value="OW" autocomplete="off"> 편도
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="tripType" id="tripMD" th:value="MD" autocomplete="off"> 다구간
+                </label>
+            </div>
+
+            <div class="col-3">
+                <button class="btn btn-primary" type="submit">검색</button>
+            </div>
+
+        </div>
+
+    </form>
+    <!-- Content here -->
+</div>
+</body>
+</html>
