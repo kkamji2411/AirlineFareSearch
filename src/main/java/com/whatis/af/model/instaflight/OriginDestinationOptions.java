@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class OriginDestinationOptions {
 
     @JsonProperty("OriginDestinationOption")
-    private List<com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOption> OriginDestinationOption = new ArrayList<com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOption>();
+    private List<OriginDestinationOption> OriginDestinationOption = new ArrayList<OriginDestinationOption>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -31,7 +27,7 @@ public class OriginDestinationOptions {
      *     The OriginDestinationOption
      */
     @JsonProperty("OriginDestinationOption")
-    public List<com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOption> getOriginDestinationOption() {
+    public List<OriginDestinationOption> getOriginDestinationOption() {
         return OriginDestinationOption;
     }
 
@@ -41,7 +37,7 @@ public class OriginDestinationOptions {
      *     The OriginDestinationOption
      */
     @JsonProperty("OriginDestinationOption")
-    public void setOriginDestinationOption(List<com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOption> OriginDestinationOption) {
+    public void setOriginDestinationOption(List<OriginDestinationOption> OriginDestinationOption) {
         this.OriginDestinationOption = OriginDestinationOption;
     }
 

@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -19,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class TPA_Extensions___ {
 
     @JsonProperty("DivideInParty")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.DivideInParty DivideInParty;
+    private DivideInParty DivideInParty;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -29,7 +25,7 @@ public class TPA_Extensions___ {
      *     The DivideInParty
      */
     @JsonProperty("DivideInParty")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.DivideInParty getDivideInParty() {
+    public DivideInParty getDivideInParty() {
         return DivideInParty;
     }
 
@@ -39,7 +35,7 @@ public class TPA_Extensions___ {
      *     The DivideInParty
      */
     @JsonProperty("DivideInParty")
-    public void setDivideInParty(com.sabre.api.sacs.rest.domain.instaflight_gen.DivideInParty DivideInParty) {
+    public void setDivideInParty(DivideInParty DivideInParty) {
         this.DivideInParty = DivideInParty;
     }
 

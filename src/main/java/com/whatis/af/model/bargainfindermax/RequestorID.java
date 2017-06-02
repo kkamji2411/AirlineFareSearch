@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class RequestorID {
 
     @JsonProperty("CompanyName")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.CompanyName CompanyName;
+    private CompanyName CompanyName;
     @JsonProperty("ID")
     private String ID;
     @JsonProperty("Type")
@@ -35,7 +31,7 @@ public class RequestorID {
      *     The CompanyName
      */
     @JsonProperty("CompanyName")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.CompanyName getCompanyName() {
+    public CompanyName getCompanyName() {
         return CompanyName;
     }
 
@@ -45,11 +41,11 @@ public class RequestorID {
      *     The CompanyName
      */
     @JsonProperty("CompanyName")
-    public void setCompanyName(com.sabre.api.sacs.rest.domain.bargainfindermax.CompanyName CompanyName) {
+    public void setCompanyName(CompanyName CompanyName) {
         this.CompanyName = CompanyName;
     }
 
-    public RequestorID withCompanyName(com.sabre.api.sacs.rest.domain.bargainfindermax.CompanyName CompanyName) {
+    public RequestorID withCompanyName(CompanyName CompanyName) {
         this.CompanyName = CompanyName;
         return this;
     }

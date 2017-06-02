@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -19,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class IntelliSellTransaction {
 
     @JsonProperty("RequestType")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.RequestType RequestType;
+    private RequestType RequestType;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -29,7 +25,7 @@ public class IntelliSellTransaction {
      *     The RequestType
      */
     @JsonProperty("RequestType")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.RequestType getRequestType() {
+    public RequestType getRequestType() {
         return RequestType;
     }
 
@@ -39,11 +35,11 @@ public class IntelliSellTransaction {
      *     The RequestType
      */
     @JsonProperty("RequestType")
-    public void setRequestType(com.sabre.api.sacs.rest.domain.bargainfindermax.RequestType RequestType) {
+    public void setRequestType(RequestType RequestType) {
         this.RequestType = RequestType;
     }
 
-    public IntelliSellTransaction withRequestType(com.sabre.api.sacs.rest.domain.bargainfindermax.RequestType RequestType) {
+    public IntelliSellTransaction withRequestType(RequestType RequestType) {
         this.RequestType = RequestType;
         return this;
     }

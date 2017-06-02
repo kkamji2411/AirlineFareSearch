@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -19,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class TPAExtensions {
 
     @JsonProperty("IntelliSellTransaction")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.IntelliSellTransaction IntelliSellTransaction;
+    private IntelliSellTransaction IntelliSellTransaction;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -29,7 +25,7 @@ public class TPAExtensions {
      *     The IntelliSellTransaction
      */
     @JsonProperty("IntelliSellTransaction")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.IntelliSellTransaction getIntelliSellTransaction() {
+    public IntelliSellTransaction getIntelliSellTransaction() {
         return IntelliSellTransaction;
     }
 
@@ -39,11 +35,11 @@ public class TPAExtensions {
      *     The IntelliSellTransaction
      */
     @JsonProperty("IntelliSellTransaction")
-    public void setIntelliSellTransaction(com.sabre.api.sacs.rest.domain.bargainfindermax.IntelliSellTransaction IntelliSellTransaction) {
+    public void setIntelliSellTransaction(IntelliSellTransaction IntelliSellTransaction) {
         this.IntelliSellTransaction = IntelliSellTransaction;
     }
 
-    public TPAExtensions withIntelliSellTransaction(com.sabre.api.sacs.rest.domain.bargainfindermax.IntelliSellTransaction IntelliSellTransaction) {
+    public TPAExtensions withIntelliSellTransaction(IntelliSellTransaction IntelliSellTransaction) {
         this.IntelliSellTransaction = IntelliSellTransaction;
         return this;
     }

@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -24,9 +20,9 @@ public class OriginDestinationInformation {
     @JsonProperty("DepartureDateTime")
     private String DepartureDateTime;
     @JsonProperty("DestinationLocation")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.DestinationLocation DestinationLocation;
+    private DestinationLocation DestinationLocation;
     @JsonProperty("OriginLocation")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.OriginLocation OriginLocation;
+    private OriginLocation OriginLocation;
     @JsonProperty("RPH")
     private String RPH;
     @JsonIgnore
@@ -63,7 +59,7 @@ public class OriginDestinationInformation {
      *     The DestinationLocation
      */
     @JsonProperty("DestinationLocation")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.DestinationLocation getDestinationLocation() {
+    public DestinationLocation getDestinationLocation() {
         return DestinationLocation;
     }
 
@@ -73,11 +69,11 @@ public class OriginDestinationInformation {
      *     The DestinationLocation
      */
     @JsonProperty("DestinationLocation")
-    public void setDestinationLocation(com.sabre.api.sacs.rest.domain.bargainfindermax.DestinationLocation DestinationLocation) {
+    public void setDestinationLocation(DestinationLocation DestinationLocation) {
         this.DestinationLocation = DestinationLocation;
     }
 
-    public OriginDestinationInformation withDestinationLocation(com.sabre.api.sacs.rest.domain.bargainfindermax.DestinationLocation DestinationLocation) {
+    public OriginDestinationInformation withDestinationLocation(DestinationLocation DestinationLocation) {
         this.DestinationLocation = DestinationLocation;
         return this;
     }
@@ -88,7 +84,7 @@ public class OriginDestinationInformation {
      *     The OriginLocation
      */
     @JsonProperty("OriginLocation")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.OriginLocation getOriginLocation() {
+    public OriginLocation getOriginLocation() {
         return OriginLocation;
     }
 
@@ -98,11 +94,11 @@ public class OriginDestinationInformation {
      *     The OriginLocation
      */
     @JsonProperty("OriginLocation")
-    public void setOriginLocation(com.sabre.api.sacs.rest.domain.bargainfindermax.OriginLocation OriginLocation) {
+    public void setOriginLocation(OriginLocation OriginLocation) {
         this.OriginLocation = OriginLocation;
     }
 
-    public OriginDestinationInformation withOriginLocation(com.sabre.api.sacs.rest.domain.bargainfindermax.OriginLocation OriginLocation) {
+    public OriginDestinationInformation withOriginLocation(OriginLocation OriginLocation) {
         this.OriginLocation = OriginLocation;
         return this;
     }

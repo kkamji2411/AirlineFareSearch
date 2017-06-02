@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -24,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class OTAAirLowFareSearchRQ {
 
     @JsonProperty("OriginDestinationInformation")
-    private List<com.sabre.api.sacs.rest.domain.bargainfindermax.OriginDestinationInformation> OriginDestinationInformation = new ArrayList<com.sabre.api.sacs.rest.domain.bargainfindermax.OriginDestinationInformation>();
+    private List<OriginDestinationInformation> OriginDestinationInformation = new ArrayList<OriginDestinationInformation>();
     @JsonProperty("POS")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.POS POS;
+    private POS POS;
     @JsonProperty("TPA_Extensions")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.TPAExtensions TPAExtensions;
+    private TPAExtensions TPAExtensions;
     @JsonProperty("TravelerInfoSummary")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.TravelerInfoSummary TravelerInfoSummary;
+    private TravelerInfoSummary TravelerInfoSummary;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -40,7 +36,7 @@ public class OTAAirLowFareSearchRQ {
      *     The OriginDestinationInformation
      */
     @JsonProperty("OriginDestinationInformation")
-    public List<com.sabre.api.sacs.rest.domain.bargainfindermax.OriginDestinationInformation> getOriginDestinationInformation() {
+    public List<OriginDestinationInformation> getOriginDestinationInformation() {
         return OriginDestinationInformation;
     }
 
@@ -50,11 +46,11 @@ public class OTAAirLowFareSearchRQ {
      *     The OriginDestinationInformation
      */
     @JsonProperty("OriginDestinationInformation")
-    public void setOriginDestinationInformation(List<com.sabre.api.sacs.rest.domain.bargainfindermax.OriginDestinationInformation> OriginDestinationInformation) {
+    public void setOriginDestinationInformation(List<OriginDestinationInformation> OriginDestinationInformation) {
         this.OriginDestinationInformation = OriginDestinationInformation;
     }
 
-    public OTAAirLowFareSearchRQ withOriginDestinationInformation(List<com.sabre.api.sacs.rest.domain.bargainfindermax.OriginDestinationInformation> OriginDestinationInformation) {
+    public OTAAirLowFareSearchRQ withOriginDestinationInformation(List<OriginDestinationInformation> OriginDestinationInformation) {
         this.OriginDestinationInformation = OriginDestinationInformation;
         return this;
     }
@@ -65,7 +61,7 @@ public class OTAAirLowFareSearchRQ {
      *     The POS
      */
     @JsonProperty("POS")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.POS getPOS() {
+    public POS getPOS() {
         return POS;
     }
 
@@ -75,11 +71,11 @@ public class OTAAirLowFareSearchRQ {
      *     The POS
      */
     @JsonProperty("POS")
-    public void setPOS(com.sabre.api.sacs.rest.domain.bargainfindermax.POS POS) {
+    public void setPOS(POS POS) {
         this.POS = POS;
     }
 
-    public OTAAirLowFareSearchRQ withPOS(com.sabre.api.sacs.rest.domain.bargainfindermax.POS POS) {
+    public OTAAirLowFareSearchRQ withPOS(POS POS) {
         this.POS = POS;
         return this;
     }
@@ -90,7 +86,7 @@ public class OTAAirLowFareSearchRQ {
      *     The TPAExtensions
      */
     @JsonProperty("TPA_Extensions")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.TPAExtensions getTPAExtensions() {
+    public TPAExtensions getTPAExtensions() {
         return TPAExtensions;
     }
 
@@ -100,11 +96,11 @@ public class OTAAirLowFareSearchRQ {
      *     The TPA_Extensions
      */
     @JsonProperty("TPA_Extensions")
-    public void setTPAExtensions(com.sabre.api.sacs.rest.domain.bargainfindermax.TPAExtensions TPAExtensions) {
+    public void setTPAExtensions(TPAExtensions TPAExtensions) {
         this.TPAExtensions = TPAExtensions;
     }
 
-    public OTAAirLowFareSearchRQ withTPAExtensions(com.sabre.api.sacs.rest.domain.bargainfindermax.TPAExtensions TPAExtensions) {
+    public OTAAirLowFareSearchRQ withTPAExtensions(TPAExtensions TPAExtensions) {
         this.TPAExtensions = TPAExtensions;
         return this;
     }
@@ -115,7 +111,7 @@ public class OTAAirLowFareSearchRQ {
      *     The TravelerInfoSummary
      */
     @JsonProperty("TravelerInfoSummary")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.TravelerInfoSummary getTravelerInfoSummary() {
+    public TravelerInfoSummary getTravelerInfoSummary() {
         return TravelerInfoSummary;
     }
 
@@ -125,11 +121,11 @@ public class OTAAirLowFareSearchRQ {
      *     The TravelerInfoSummary
      */
     @JsonProperty("TravelerInfoSummary")
-    public void setTravelerInfoSummary(com.sabre.api.sacs.rest.domain.bargainfindermax.TravelerInfoSummary TravelerInfoSummary) {
+    public void setTravelerInfoSummary(TravelerInfoSummary TravelerInfoSummary) {
         this.TravelerInfoSummary = TravelerInfoSummary;
     }
 
-    public OTAAirLowFareSearchRQ withTravelerInfoSummary(com.sabre.api.sacs.rest.domain.bargainfindermax.TravelerInfoSummary TravelerInfoSummary) {
+    public OTAAirLowFareSearchRQ withTravelerInfoSummary(TravelerInfoSummary TravelerInfoSummary) {
         this.TravelerInfoSummary = TravelerInfoSummary;
         return this;
     }

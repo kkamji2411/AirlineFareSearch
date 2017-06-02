@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -33,15 +29,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class FlightSegment {
 
     @JsonProperty("DepartureAirport")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureAirport DepartureAirport;
+    private DepartureAirport DepartureAirport;
     @JsonProperty("ArrivalAirport")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalAirport ArrivalAirport;
+    private ArrivalAirport ArrivalAirport;
     @JsonProperty("MarketingAirline")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.MarketingAirline MarketingAirline;
+    private MarketingAirline MarketingAirline;
     @JsonProperty("ArrivalTimeZone")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalTimeZone ArrivalTimeZone;
+    private ArrivalTimeZone ArrivalTimeZone;
     @JsonProperty("TPA_Extensions")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.TPA_Extensions TPA_Extensions;
+    private TPA_Extensions TPA_Extensions;
     @JsonProperty("StopQuantity")
     private Integer StopQuantity;
     @JsonProperty("ElapsedTime")
@@ -51,7 +47,7 @@ public class FlightSegment {
     @JsonProperty("MarriageGrp")
     private String MarriageGrp;
     @JsonProperty("Equipment")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.Equipment Equipment;
+    private Equipment Equipment;
     @JsonProperty("DepartureDateTime")
     private String DepartureDateTime;
     @JsonProperty("ArrivalDateTime")
@@ -59,9 +55,9 @@ public class FlightSegment {
     @JsonProperty("FlightNumber")
     private Integer FlightNumber;
     @JsonProperty("OperatingAirline")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.OperatingAirline OperatingAirline;
+    private OperatingAirline OperatingAirline;
     @JsonProperty("DepartureTimeZone")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureTimeZone DepartureTimeZone;
+    private DepartureTimeZone DepartureTimeZone;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -71,7 +67,7 @@ public class FlightSegment {
      *     The DepartureAirport
      */
     @JsonProperty("DepartureAirport")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureAirport getDepartureAirport() {
+    public DepartureAirport getDepartureAirport() {
         return DepartureAirport;
     }
 
@@ -81,7 +77,7 @@ public class FlightSegment {
      *     The DepartureAirport
      */
     @JsonProperty("DepartureAirport")
-    public void setDepartureAirport(com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureAirport DepartureAirport) {
+    public void setDepartureAirport(DepartureAirport DepartureAirport) {
         this.DepartureAirport = DepartureAirport;
     }
 
@@ -91,7 +87,7 @@ public class FlightSegment {
      *     The ArrivalAirport
      */
     @JsonProperty("ArrivalAirport")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalAirport getArrivalAirport() {
+    public ArrivalAirport getArrivalAirport() {
         return ArrivalAirport;
     }
 
@@ -101,7 +97,7 @@ public class FlightSegment {
      *     The ArrivalAirport
      */
     @JsonProperty("ArrivalAirport")
-    public void setArrivalAirport(com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalAirport ArrivalAirport) {
+    public void setArrivalAirport(ArrivalAirport ArrivalAirport) {
         this.ArrivalAirport = ArrivalAirport;
     }
 
@@ -111,7 +107,7 @@ public class FlightSegment {
      *     The MarketingAirline
      */
     @JsonProperty("MarketingAirline")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.MarketingAirline getMarketingAirline() {
+    public MarketingAirline getMarketingAirline() {
         return MarketingAirline;
     }
 
@@ -121,7 +117,7 @@ public class FlightSegment {
      *     The MarketingAirline
      */
     @JsonProperty("MarketingAirline")
-    public void setMarketingAirline(com.sabre.api.sacs.rest.domain.instaflight_gen.MarketingAirline MarketingAirline) {
+    public void setMarketingAirline(MarketingAirline MarketingAirline) {
         this.MarketingAirline = MarketingAirline;
     }
 
@@ -131,7 +127,7 @@ public class FlightSegment {
      *     The ArrivalTimeZone
      */
     @JsonProperty("ArrivalTimeZone")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalTimeZone getArrivalTimeZone() {
+    public ArrivalTimeZone getArrivalTimeZone() {
         return ArrivalTimeZone;
     }
 
@@ -141,7 +137,7 @@ public class FlightSegment {
      *     The ArrivalTimeZone
      */
     @JsonProperty("ArrivalTimeZone")
-    public void setArrivalTimeZone(com.sabre.api.sacs.rest.domain.instaflight_gen.ArrivalTimeZone ArrivalTimeZone) {
+    public void setArrivalTimeZone(ArrivalTimeZone ArrivalTimeZone) {
         this.ArrivalTimeZone = ArrivalTimeZone;
     }
 
@@ -151,7 +147,7 @@ public class FlightSegment {
      *     The TPA_Extensions
      */
     @JsonProperty("TPA_Extensions")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.TPA_Extensions getTPA_Extensions() {
+    public TPA_Extensions getTPA_Extensions() {
         return TPA_Extensions;
     }
 
@@ -161,7 +157,7 @@ public class FlightSegment {
      *     The TPA_Extensions
      */
     @JsonProperty("TPA_Extensions")
-    public void setTPA_Extensions(com.sabre.api.sacs.rest.domain.instaflight_gen.TPA_Extensions TPA_Extensions) {
+    public void setTPA_Extensions(TPA_Extensions TPA_Extensions) {
         this.TPA_Extensions = TPA_Extensions;
     }
 
@@ -251,7 +247,7 @@ public class FlightSegment {
      *     The Equipment
      */
     @JsonProperty("Equipment")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.Equipment getEquipment() {
+    public Equipment getEquipment() {
         return Equipment;
     }
 
@@ -261,7 +257,7 @@ public class FlightSegment {
      *     The Equipment
      */
     @JsonProperty("Equipment")
-    public void setEquipment(com.sabre.api.sacs.rest.domain.instaflight_gen.Equipment Equipment) {
+    public void setEquipment(Equipment Equipment) {
         this.Equipment = Equipment;
     }
 
@@ -331,7 +327,7 @@ public class FlightSegment {
      *     The OperatingAirline
      */
     @JsonProperty("OperatingAirline")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.OperatingAirline getOperatingAirline() {
+    public OperatingAirline getOperatingAirline() {
         return OperatingAirline;
     }
 
@@ -341,7 +337,7 @@ public class FlightSegment {
      *     The OperatingAirline
      */
     @JsonProperty("OperatingAirline")
-    public void setOperatingAirline(com.sabre.api.sacs.rest.domain.instaflight_gen.OperatingAirline OperatingAirline) {
+    public void setOperatingAirline(OperatingAirline OperatingAirline) {
         this.OperatingAirline = OperatingAirline;
     }
 
@@ -351,7 +347,7 @@ public class FlightSegment {
      *     The DepartureTimeZone
      */
     @JsonProperty("DepartureTimeZone")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureTimeZone getDepartureTimeZone() {
+    public DepartureTimeZone getDepartureTimeZone() {
         return DepartureTimeZone;
     }
 
@@ -361,7 +357,7 @@ public class FlightSegment {
      *     The DepartureTimeZone
      */
     @JsonProperty("DepartureTimeZone")
-    public void setDepartureTimeZone(com.sabre.api.sacs.rest.domain.instaflight_gen.DepartureTimeZone DepartureTimeZone) {
+    public void setDepartureTimeZone(DepartureTimeZone DepartureTimeZone) {
         this.DepartureTimeZone = DepartureTimeZone;
     }
 

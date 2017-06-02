@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class TravelerInfoSummary {
 
     @JsonProperty("AirTravelerAvail")
-    private List<com.sabre.api.sacs.rest.domain.bargainfindermax.AirTravelerAvail> AirTravelerAvail = new ArrayList<com.sabre.api.sacs.rest.domain.bargainfindermax.AirTravelerAvail>();
+    private List<AirTravelerAvail> AirTravelerAvail = new ArrayList<AirTravelerAvail>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -31,7 +27,7 @@ public class TravelerInfoSummary {
      *     The AirTravelerAvail
      */
     @JsonProperty("AirTravelerAvail")
-    public List<com.sabre.api.sacs.rest.domain.bargainfindermax.AirTravelerAvail> getAirTravelerAvail() {
+    public List<AirTravelerAvail> getAirTravelerAvail() {
         return AirTravelerAvail;
     }
 
@@ -41,11 +37,11 @@ public class TravelerInfoSummary {
      *     The AirTravelerAvail
      */
     @JsonProperty("AirTravelerAvail")
-    public void setAirTravelerAvail(List<com.sabre.api.sacs.rest.domain.bargainfindermax.AirTravelerAvail> AirTravelerAvail) {
+    public void setAirTravelerAvail(List<AirTravelerAvail> AirTravelerAvail) {
         this.AirTravelerAvail = AirTravelerAvail;
     }
 
-    public TravelerInfoSummary withAirTravelerAvail(List<com.sabre.api.sacs.rest.domain.bargainfindermax.AirTravelerAvail> AirTravelerAvail) {
+    public TravelerInfoSummary withAirTravelerAvail(List<AirTravelerAvail> AirTravelerAvail) {
         this.AirTravelerAvail = AirTravelerAvail;
         return this;
     }

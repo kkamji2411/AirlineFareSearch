@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class POS {
 
     @JsonProperty("Source")
-    private List<com.sabre.api.sacs.rest.domain.bargainfindermax.Source> Source = new ArrayList<com.sabre.api.sacs.rest.domain.bargainfindermax.Source>();
+    private List<Source> Source = new ArrayList<Source>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -31,7 +27,7 @@ public class POS {
      *     The Source
      */
     @JsonProperty("Source")
-    public List<com.sabre.api.sacs.rest.domain.bargainfindermax.Source> getSource() {
+    public List<Source> getSource() {
         return Source;
     }
 
@@ -41,11 +37,11 @@ public class POS {
      *     The Source
      */
     @JsonProperty("Source")
-    public void setSource(List<com.sabre.api.sacs.rest.domain.bargainfindermax.Source> Source) {
+    public void setSource(List<Source> Source) {
         this.Source = Source;
     }
 
-    public POS withSource(List<com.sabre.api.sacs.rest.domain.bargainfindermax.Source> Source) {
+    public POS withSource(List<Source> Source) {
         this.Source = Source;
         return this;
     }

@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,11 +17,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PTC_FareBreakdown {
 
     @JsonProperty("FareBasisCodes")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.FareBasisCodes FareBasisCodes;
+    private FareBasisCodes FareBasisCodes;
     @JsonProperty("PassengerTypeQuantity")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerTypeQuantity PassengerTypeQuantity;
+    private PassengerTypeQuantity PassengerTypeQuantity;
     @JsonProperty("PassengerFare")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerFare PassengerFare;
+    private PassengerFare PassengerFare;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -35,7 +31,7 @@ public class PTC_FareBreakdown {
      *     The FareBasisCodes
      */
     @JsonProperty("FareBasisCodes")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.FareBasisCodes getFareBasisCodes() {
+    public FareBasisCodes getFareBasisCodes() {
         return FareBasisCodes;
     }
 
@@ -45,7 +41,7 @@ public class PTC_FareBreakdown {
      *     The FareBasisCodes
      */
     @JsonProperty("FareBasisCodes")
-    public void setFareBasisCodes(com.sabre.api.sacs.rest.domain.instaflight_gen.FareBasisCodes FareBasisCodes) {
+    public void setFareBasisCodes(FareBasisCodes FareBasisCodes) {
         this.FareBasisCodes = FareBasisCodes;
     }
 
@@ -55,7 +51,7 @@ public class PTC_FareBreakdown {
      *     The PassengerTypeQuantity
      */
     @JsonProperty("PassengerTypeQuantity")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerTypeQuantity getPassengerTypeQuantity() {
+    public PassengerTypeQuantity getPassengerTypeQuantity() {
         return PassengerTypeQuantity;
     }
 
@@ -65,7 +61,7 @@ public class PTC_FareBreakdown {
      *     The PassengerTypeQuantity
      */
     @JsonProperty("PassengerTypeQuantity")
-    public void setPassengerTypeQuantity(com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerTypeQuantity PassengerTypeQuantity) {
+    public void setPassengerTypeQuantity(PassengerTypeQuantity PassengerTypeQuantity) {
         this.PassengerTypeQuantity = PassengerTypeQuantity;
     }
 
@@ -75,7 +71,7 @@ public class PTC_FareBreakdown {
      *     The PassengerFare
      */
     @JsonProperty("PassengerFare")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerFare getPassengerFare() {
+    public PassengerFare getPassengerFare() {
         return PassengerFare;
     }
 
@@ -85,7 +81,7 @@ public class PTC_FareBreakdown {
      *     The PassengerFare
      */
     @JsonProperty("PassengerFare")
-    public void setPassengerFare(com.sabre.api.sacs.rest.domain.instaflight_gen.PassengerFare PassengerFare) {
+    public void setPassengerFare(PassengerFare PassengerFare) {
         this.PassengerFare = PassengerFare;
     }
 

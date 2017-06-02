@@ -1,13 +1,13 @@
 package com.whatis.af.interceptor;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+
+import java.io.IOException;
 
 /**
  * Interceptor used for logging requests.

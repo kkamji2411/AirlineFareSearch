@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -19,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PTC_FareBreakdowns {
 
     @JsonProperty("PTC_FareBreakdown")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdown PTC_FareBreakdown;
+    private PTC_FareBreakdown PTC_FareBreakdown;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -29,7 +25,7 @@ public class PTC_FareBreakdowns {
      *     The PTC_FareBreakdown
      */
     @JsonProperty("PTC_FareBreakdown")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdown getPTC_FareBreakdown() {
+    public PTC_FareBreakdown getPTC_FareBreakdown() {
         return PTC_FareBreakdown;
     }
 
@@ -39,7 +35,7 @@ public class PTC_FareBreakdowns {
      *     The PTC_FareBreakdown
      */
     @JsonProperty("PTC_FareBreakdown")
-    public void setPTC_FareBreakdown(com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdown PTC_FareBreakdown) {
+    public void setPTC_FareBreakdown(PTC_FareBreakdown PTC_FareBreakdown) {
         this.PTC_FareBreakdown = PTC_FareBreakdown;
     }
 

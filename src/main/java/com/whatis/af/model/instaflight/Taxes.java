@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -22,9 +18,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Taxes {
 
     @JsonProperty("TotalTax")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.TotalTax TotalTax;
+    private TotalTax TotalTax;
     @JsonProperty("Tax")
-    private List<com.sabre.api.sacs.rest.domain.instaflight_gen.Tax> Tax = new ArrayList<com.sabre.api.sacs.rest.domain.instaflight_gen.Tax>();
+    private List<Tax> Tax = new ArrayList<Tax>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -34,7 +30,7 @@ public class Taxes {
      *     The TotalTax
      */
     @JsonProperty("TotalTax")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.TotalTax getTotalTax() {
+    public TotalTax getTotalTax() {
         return TotalTax;
     }
 
@@ -44,7 +40,7 @@ public class Taxes {
      *     The TotalTax
      */
     @JsonProperty("TotalTax")
-    public void setTotalTax(com.sabre.api.sacs.rest.domain.instaflight_gen.TotalTax TotalTax) {
+    public void setTotalTax(TotalTax TotalTax) {
         this.TotalTax = TotalTax;
     }
 
@@ -54,7 +50,7 @@ public class Taxes {
      *     The Tax
      */
     @JsonProperty("Tax")
-    public List<com.sabre.api.sacs.rest.domain.instaflight_gen.Tax> getTax() {
+    public List<Tax> getTax() {
         return Tax;
     }
 
@@ -64,7 +60,7 @@ public class Taxes {
      *     The Tax
      */
     @JsonProperty("Tax")
-    public void setTax(List<com.sabre.api.sacs.rest.domain.instaflight_gen.Tax> Tax) {
+    public void setTax(List<Tax> Tax) {
         this.Tax = Tax;
     }
 

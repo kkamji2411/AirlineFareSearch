@@ -1,6 +1,7 @@
 package com.whatis.af.service;
 
-import com.whatis.af.model.SabreToken;
+
+import com.whatis.af.model.auth.SabreToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

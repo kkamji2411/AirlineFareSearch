@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -19,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class BargainFinderMaxRequest {
 
     @JsonProperty("OTA_AirLowFareSearchRQ")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ;
+    private OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -29,7 +25,7 @@ public class BargainFinderMaxRequest {
      *     The OTAAirLowFareSearchRQ
      */
     @JsonProperty("OTA_AirLowFareSearchRQ")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.OTAAirLowFareSearchRQ getOTAAirLowFareSearchRQ() {
+    public OTAAirLowFareSearchRQ getOTAAirLowFareSearchRQ() {
         return OTAAirLowFareSearchRQ;
     }
 
@@ -39,11 +35,11 @@ public class BargainFinderMaxRequest {
      *     The OTA_AirLowFareSearchRQ
      */
     @JsonProperty("OTA_AirLowFareSearchRQ")
-    public void setOTAAirLowFareSearchRQ(com.sabre.api.sacs.rest.domain.bargainfindermax.OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ) {
+    public void setOTAAirLowFareSearchRQ(OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ) {
         this.OTAAirLowFareSearchRQ = OTAAirLowFareSearchRQ;
     }
 
-    public BargainFinderMaxRequest withOTAAirLowFareSearchRQ(com.sabre.api.sacs.rest.domain.bargainfindermax.OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ) {
+    public BargainFinderMaxRequest withOTAAirLowFareSearchRQ(OTAAirLowFareSearchRQ OTAAirLowFareSearchRQ) {
         this.OTAAirLowFareSearchRQ = OTAAirLowFareSearchRQ;
         return this;
     }

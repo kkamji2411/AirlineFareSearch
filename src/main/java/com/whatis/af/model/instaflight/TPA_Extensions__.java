@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -20,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class TPA_Extensions__ {
 
     @JsonProperty("Cabin")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.Cabin Cabin;
+    private Cabin Cabin;
     @JsonProperty("SeatsRemaining")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.SeatsRemaining SeatsRemaining;
+    private SeatsRemaining SeatsRemaining;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -32,7 +28,7 @@ public class TPA_Extensions__ {
      *     The Cabin
      */
     @JsonProperty("Cabin")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.Cabin getCabin() {
+    public Cabin getCabin() {
         return Cabin;
     }
 
@@ -42,7 +38,7 @@ public class TPA_Extensions__ {
      *     The Cabin
      */
     @JsonProperty("Cabin")
-    public void setCabin(com.sabre.api.sacs.rest.domain.instaflight_gen.Cabin Cabin) {
+    public void setCabin(Cabin Cabin) {
         this.Cabin = Cabin;
     }
 
@@ -52,7 +48,7 @@ public class TPA_Extensions__ {
      *     The SeatsRemaining
      */
     @JsonProperty("SeatsRemaining")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.SeatsRemaining getSeatsRemaining() {
+    public SeatsRemaining getSeatsRemaining() {
         return SeatsRemaining;
     }
 
@@ -62,7 +58,7 @@ public class TPA_Extensions__ {
      *     The SeatsRemaining
      */
     @JsonProperty("SeatsRemaining")
-    public void setSeatsRemaining(com.sabre.api.sacs.rest.domain.instaflight_gen.SeatsRemaining SeatsRemaining) {
+    public void setSeatsRemaining(SeatsRemaining SeatsRemaining) {
         this.SeatsRemaining = SeatsRemaining;
     }
 

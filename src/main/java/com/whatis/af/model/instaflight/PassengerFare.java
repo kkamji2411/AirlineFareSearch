@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -23,15 +19,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PassengerFare {
 
     @JsonProperty("FareConstruction")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.FareConstruction FareConstruction;
+    private FareConstruction FareConstruction;
     @JsonProperty("TotalFare")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.TotalFare TotalFare;
+    private TotalFare TotalFare;
     @JsonProperty("Taxes")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.Taxes Taxes;
+    private Taxes Taxes;
     @JsonProperty("BaseFare")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.BaseFare BaseFare;
+    private BaseFare BaseFare;
     @JsonProperty("EquivFare")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.EquivFare EquivFare;
+    private EquivFare EquivFare;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -41,7 +37,7 @@ public class PassengerFare {
      *     The FareConstruction
      */
     @JsonProperty("FareConstruction")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.FareConstruction getFareConstruction() {
+    public FareConstruction getFareConstruction() {
         return FareConstruction;
     }
 
@@ -51,7 +47,7 @@ public class PassengerFare {
      *     The FareConstruction
      */
     @JsonProperty("FareConstruction")
-    public void setFareConstruction(com.sabre.api.sacs.rest.domain.instaflight_gen.FareConstruction FareConstruction) {
+    public void setFareConstruction(FareConstruction FareConstruction) {
         this.FareConstruction = FareConstruction;
     }
 
@@ -61,7 +57,7 @@ public class PassengerFare {
      *     The TotalFare
      */
     @JsonProperty("TotalFare")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.TotalFare getTotalFare() {
+    public TotalFare getTotalFare() {
         return TotalFare;
     }
 
@@ -71,7 +67,7 @@ public class PassengerFare {
      *     The TotalFare
      */
     @JsonProperty("TotalFare")
-    public void setTotalFare(com.sabre.api.sacs.rest.domain.instaflight_gen.TotalFare TotalFare) {
+    public void setTotalFare(TotalFare TotalFare) {
         this.TotalFare = TotalFare;
     }
 
@@ -81,7 +77,7 @@ public class PassengerFare {
      *     The Taxes
      */
     @JsonProperty("Taxes")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.Taxes getTaxes() {
+    public Taxes getTaxes() {
         return Taxes;
     }
 
@@ -91,7 +87,7 @@ public class PassengerFare {
      *     The Taxes
      */
     @JsonProperty("Taxes")
-    public void setTaxes(com.sabre.api.sacs.rest.domain.instaflight_gen.Taxes Taxes) {
+    public void setTaxes(Taxes Taxes) {
         this.Taxes = Taxes;
     }
 
@@ -101,7 +97,7 @@ public class PassengerFare {
      *     The BaseFare
      */
     @JsonProperty("BaseFare")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.BaseFare getBaseFare() {
+    public BaseFare getBaseFare() {
         return BaseFare;
     }
 
@@ -111,7 +107,7 @@ public class PassengerFare {
      *     The BaseFare
      */
     @JsonProperty("BaseFare")
-    public void setBaseFare(com.sabre.api.sacs.rest.domain.instaflight_gen.BaseFare BaseFare) {
+    public void setBaseFare(BaseFare BaseFare) {
         this.BaseFare = BaseFare;
     }
 
@@ -121,7 +117,7 @@ public class PassengerFare {
      *     The EquivFare
      */
     @JsonProperty("EquivFare")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.EquivFare getEquivFare() {
+    public EquivFare getEquivFare() {
         return EquivFare;
     }
 
@@ -131,7 +127,7 @@ public class PassengerFare {
      *     The EquivFare
      */
     @JsonProperty("EquivFare")
-    public void setEquivFare(com.sabre.api.sacs.rest.domain.instaflight_gen.EquivFare EquivFare) {
+    public void setEquivFare(EquivFare EquivFare) {
         this.EquivFare = EquivFare;
     }
 

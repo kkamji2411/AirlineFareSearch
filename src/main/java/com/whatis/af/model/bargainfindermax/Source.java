@@ -1,27 +1,42 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
+    "PseudoCityCode",
     "RequestorID"
 })
 public class Source {
 
+    @JsonProperty("PseudoCityCode")
+    private String pseudoCityCode;
+
     @JsonProperty("RequestorID")
-    private com.sabre.api.sacs.rest.domain.bargainfindermax.RequestorID RequestorID;
+    private RequestorID RequestorID;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("PseudoCityCode")
+    public String getPseudoCityCode() {
+        return pseudoCityCode;
+    }
+
+    @JsonProperty("PseudoCityCode")
+    public void setPseudoCityCode(String pseudoCityCode) {
+        this.pseudoCityCode = pseudoCityCode;
+    }
+
+    public Source withPseudoCityCode(String pseudoCityCode) {
+        this.pseudoCityCode = pseudoCityCode;
+        return this;
+    }
 
     /**
      * 
@@ -29,7 +44,7 @@ public class Source {
      *     The RequestorID
      */
     @JsonProperty("RequestorID")
-    public com.sabre.api.sacs.rest.domain.bargainfindermax.RequestorID getRequestorID() {
+    public RequestorID getRequestorID() {
         return RequestorID;
     }
 
@@ -39,11 +54,11 @@ public class Source {
      *     The RequestorID
      */
     @JsonProperty("RequestorID")
-    public void setRequestorID(com.sabre.api.sacs.rest.domain.bargainfindermax.RequestorID RequestorID) {
+    public void setRequestorID(RequestorID RequestorID) {
         this.RequestorID = RequestorID;
     }
 
-    public Source withRequestorID(com.sabre.api.sacs.rest.domain.bargainfindermax.RequestorID RequestorID) {
+    public Source withRequestorID(RequestorID RequestorID) {
         this.RequestorID = RequestorID;
         return this;
     }

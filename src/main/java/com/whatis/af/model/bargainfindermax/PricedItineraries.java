@@ -1,9 +1,9 @@
 package com.whatis.af.model.bargainfindermax;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sabre.api.sacs.rest.domain.instaflight_gen.PricedItinerary;
+import com.whatis.af.model.instaflight.PricedItinerary;
+
+import java.util.List;
 
 public class PricedItineraries {
 

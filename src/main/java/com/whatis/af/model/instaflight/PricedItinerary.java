@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -23,15 +19,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PricedItinerary {
 
     @JsonProperty("AirItinerary")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.AirItinerary AirItinerary;
+    private AirItinerary AirItinerary;
     @JsonProperty("TPA_Extensions")
     private TPA_Extensions_ TPA_Extensions;
     @JsonProperty("SequenceNumber")
     private Integer SequenceNumber;
     @JsonProperty("AirItineraryPricingInfo")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.AirItineraryPricingInfo AirItineraryPricingInfo;
+    private AirItineraryPricingInfo AirItineraryPricingInfo;
     @JsonProperty("TicketingInfo")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.TicketingInfo TicketingInfo;
+    private TicketingInfo TicketingInfo;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -41,7 +37,7 @@ public class PricedItinerary {
      *     The AirItinerary
      */
     @JsonProperty("AirItinerary")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.AirItinerary getAirItinerary() {
+    public AirItinerary getAirItinerary() {
         return AirItinerary;
     }
 
@@ -51,7 +47,7 @@ public class PricedItinerary {
      *     The AirItinerary
      */
     @JsonProperty("AirItinerary")
-    public void setAirItinerary(com.sabre.api.sacs.rest.domain.instaflight_gen.AirItinerary AirItinerary) {
+    public void setAirItinerary(AirItinerary AirItinerary) {
         this.AirItinerary = AirItinerary;
     }
 
@@ -101,7 +97,7 @@ public class PricedItinerary {
      *     The AirItineraryPricingInfo
      */
     @JsonProperty("AirItineraryPricingInfo")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.AirItineraryPricingInfo getAirItineraryPricingInfo() {
+    public AirItineraryPricingInfo getAirItineraryPricingInfo() {
         return AirItineraryPricingInfo;
     }
 
@@ -111,7 +107,7 @@ public class PricedItinerary {
      *     The AirItineraryPricingInfo
      */
     @JsonProperty("AirItineraryPricingInfo")
-    public void setAirItineraryPricingInfo(com.sabre.api.sacs.rest.domain.instaflight_gen.AirItineraryPricingInfo AirItineraryPricingInfo) {
+    public void setAirItineraryPricingInfo(AirItineraryPricingInfo AirItineraryPricingInfo) {
         this.AirItineraryPricingInfo = AirItineraryPricingInfo;
     }
 
@@ -121,7 +117,7 @@ public class PricedItinerary {
      *     The TicketingInfo
      */
     @JsonProperty("TicketingInfo")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.TicketingInfo getTicketingInfo() {
+    public TicketingInfo getTicketingInfo() {
         return TicketingInfo;
     }
 
@@ -131,7 +127,7 @@ public class PricedItinerary {
      *     The TicketingInfo
      */
     @JsonProperty("TicketingInfo")
-    public void setTicketingInfo(com.sabre.api.sacs.rest.domain.instaflight_gen.TicketingInfo TicketingInfo) {
+    public void setTicketingInfo(TicketingInfo TicketingInfo) {
         this.TicketingInfo = TicketingInfo;
     }
 

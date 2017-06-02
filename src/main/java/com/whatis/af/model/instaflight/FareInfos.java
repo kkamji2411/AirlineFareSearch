@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class FareInfos {
 
     @JsonProperty("FareInfo")
-    private List<com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfo> FareInfo = new ArrayList<com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfo>();
+    private List<FareInfo> FareInfo = new ArrayList<FareInfo>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -31,7 +27,7 @@ public class FareInfos {
      *     The FareInfo
      */
     @JsonProperty("FareInfo")
-    public List<com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfo> getFareInfo() {
+    public List<FareInfo> getFareInfo() {
         return FareInfo;
     }
 
@@ -41,7 +37,7 @@ public class FareInfos {
      *     The FareInfo
      */
     @JsonProperty("FareInfo")
-    public void setFareInfo(List<com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfo> FareInfo) {
+    public void setFareInfo(List<FareInfo> FareInfo) {
         this.FareInfo = FareInfo;
     }
 

@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -20,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class AirItinerary {
 
     @JsonProperty("OriginDestinationOptions")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOptions OriginDestinationOptions;
+    private OriginDestinationOptions OriginDestinationOptions;
     @JsonProperty("DirectionInd")
     private String DirectionInd;
     @JsonIgnore
@@ -32,7 +28,7 @@ public class AirItinerary {
      *     The OriginDestinationOptions
      */
     @JsonProperty("OriginDestinationOptions")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOptions getOriginDestinationOptions() {
+    public OriginDestinationOptions getOriginDestinationOptions() {
         return OriginDestinationOptions;
     }
 
@@ -42,7 +38,7 @@ public class AirItinerary {
      *     The OriginDestinationOptions
      */
     @JsonProperty("OriginDestinationOptions")
-    public void setOriginDestinationOptions(com.sabre.api.sacs.rest.domain.instaflight_gen.OriginDestinationOptions OriginDestinationOptions) {
+    public void setOriginDestinationOptions(OriginDestinationOptions OriginDestinationOptions) {
         this.OriginDestinationOptions = OriginDestinationOptions;
     }
 

@@ -1,17 +1,13 @@
 
 package com.whatis.af.model.bargainfindermax;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -21,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class AirTravelerAvail {
 
     @JsonProperty("PassengerTypeQuantity")
-    private List<com.sabre.api.sacs.rest.domain.bargainfindermax.PassengerTypeQuantity> PassengerTypeQuantity = new ArrayList<com.sabre.api.sacs.rest.domain.bargainfindermax.PassengerTypeQuantity>();
+    private List<PassengerTypeQuantity> PassengerTypeQuantity = new ArrayList<PassengerTypeQuantity>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -31,7 +27,7 @@ public class AirTravelerAvail {
      *     The PassengerTypeQuantity
      */
     @JsonProperty("PassengerTypeQuantity")
-    public List<com.sabre.api.sacs.rest.domain.bargainfindermax.PassengerTypeQuantity> getPassengerTypeQuantity() {
+    public List<PassengerTypeQuantity> getPassengerTypeQuantity() {
         return PassengerTypeQuantity;
     }
 
@@ -41,11 +37,11 @@ public class AirTravelerAvail {
      *     The PassengerTypeQuantity
      */
     @JsonProperty("PassengerTypeQuantity")
-    public void setPassengerTypeQuantity(List<com.sabre.api.sacs.rest.domain.bargainfindermax.PassengerTypeQuantity> PassengerTypeQuantity) {
+    public void setPassengerTypeQuantity(List<PassengerTypeQuantity> PassengerTypeQuantity) {
         this.PassengerTypeQuantity = PassengerTypeQuantity;
     }
 
-    public AirTravelerAvail withPassengerTypeQuantity(List<com.sabre.api.sacs.rest.domain.bargainfindermax.PassengerTypeQuantity> PassengerTypeQuantity) {
+    public AirTravelerAvail withPassengerTypeQuantity(List<PassengerTypeQuantity> PassengerTypeQuantity) {
         this.PassengerTypeQuantity = PassengerTypeQuantity;
         return this;
     }

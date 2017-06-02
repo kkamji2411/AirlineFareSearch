@@ -1,15 +1,11 @@
 
 package com.whatis.af.model.instaflight;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -22,13 +18,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class AirItineraryPricingInfo {
 
     @JsonProperty("PTC_FareBreakdowns")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdowns PTC_FareBreakdowns;
+    private PTC_FareBreakdowns PTC_FareBreakdowns;
     @JsonProperty("FareInfos")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfos FareInfos;
+    private FareInfos FareInfos;
     @JsonProperty("TPA_Extensions")
     private TPA_Extensions___ TPA_Extensions;
     @JsonProperty("ItinTotalFare")
-    private com.sabre.api.sacs.rest.domain.instaflight_gen.ItinTotalFare ItinTotalFare;
+    private ItinTotalFare ItinTotalFare;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -38,7 +34,7 @@ public class AirItineraryPricingInfo {
      *     The PTC_FareBreakdowns
      */
     @JsonProperty("PTC_FareBreakdowns")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdowns getPTC_FareBreakdowns() {
+    public PTC_FareBreakdowns getPTC_FareBreakdowns() {
         return PTC_FareBreakdowns;
     }
 
@@ -48,7 +44,7 @@ public class AirItineraryPricingInfo {
      *     The PTC_FareBreakdowns
      */
     @JsonProperty("PTC_FareBreakdowns")
-    public void setPTC_FareBreakdowns(com.sabre.api.sacs.rest.domain.instaflight_gen.PTC_FareBreakdowns PTC_FareBreakdowns) {
+    public void setPTC_FareBreakdowns(PTC_FareBreakdowns PTC_FareBreakdowns) {
         this.PTC_FareBreakdowns = PTC_FareBreakdowns;
     }
 
@@ -58,7 +54,7 @@ public class AirItineraryPricingInfo {
      *     The FareInfos
      */
     @JsonProperty("FareInfos")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfos getFareInfos() {
+    public FareInfos getFareInfos() {
         return FareInfos;
     }
 
@@ -68,7 +64,7 @@ public class AirItineraryPricingInfo {
      *     The FareInfos
      */
     @JsonProperty("FareInfos")
-    public void setFareInfos(com.sabre.api.sacs.rest.domain.instaflight_gen.FareInfos FareInfos) {
+    public void setFareInfos(FareInfos FareInfos) {
         this.FareInfos = FareInfos;
     }
 
@@ -98,7 +94,7 @@ public class AirItineraryPricingInfo {
      *     The ItinTotalFare
      */
     @JsonProperty("ItinTotalFare")
-    public com.sabre.api.sacs.rest.domain.instaflight_gen.ItinTotalFare getItinTotalFare() {
+    public ItinTotalFare getItinTotalFare() {
         return ItinTotalFare;
     }
 
@@ -108,7 +104,7 @@ public class AirItineraryPricingInfo {
      *     The ItinTotalFare
      */
     @JsonProperty("ItinTotalFare")
-    public void setItinTotalFare(com.sabre.api.sacs.rest.domain.instaflight_gen.ItinTotalFare ItinTotalFare) {
+    public void setItinTotalFare(ItinTotalFare ItinTotalFare) {
         this.ItinTotalFare = ItinTotalFare;
     }
 

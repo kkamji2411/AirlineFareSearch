@@ -1,81 +1,69 @@
 package com.whatis.af.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.whatis.af.model.auth.SabreToken;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import com.sabre.api.sacs.rest.domain.BaseDomainRequest;
-import com.sabre.api.sacs.rest.interceptor.AuthenticatingGetInterceptor;
-import com.sabre.api.sacs.rest.interceptor.LoggingRequestInterceptor;
-import com.sabre.api.sacs.workflow.SharedContext;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Class responsible for executing the GET call.
  * @param <RQ> the request domain class.
  */
 @Controller
-@Scope("prototype")
-public class GenericRestGetCall<RQ extends BaseDomainRequest> {
+public class GenericRestGetCall {
     
     private static final Logger LOG = LogManager.getLogger(GenericRestGetCall.class);
     
     private String url;
-    
-    private RQ request;
-    
-    @Autowired
-    private AuthenticatingGetInterceptor authInterceptor;
-    
-    @Autowired
-    private TokenHolder tokenHolder;
 
+    @Autowired
+    private TokenProvider tokenProvider;
     /**
      * Adds interceptors, creates request string with query and sends the request.
      * Returns the response object.
-     * @param cls Class of the response object.
      * @return response object.
      */
-    public <RS> RS doCall(Class<RS> cls, SharedContext context) {
-        RestTemplate restTemplate = new RestTemplate();
-        List<ClientHttpRequestInterceptor> ris = new ArrayList<ClientHttpRequestInterceptor>();
-        ris.add(new LoggingRequestInterceptor());
-        ris.add(authInterceptor);
-        restTemplate.setInterceptors(ris);
+    public String doCall() {
+        String result = "";
+        try {
+            URL oUrl = new URL(url);
+            // HTTP 접속 구하기
+            HttpURLConnection conn = (HttpURLConnection) oUrl.openConnection();
 
-        RS response = null;
-        try {
-            response = cls.newInstance();
-        } catch (InstantiationException e) {
-            LOG.catching(e);
-        } catch (IllegalAccessException e) {
-            LOG.catching(e);
+            // 리퀘스트 메소드를 POST로 설정
+            conn.setRequestMethod("GET");
+
+            // 연결된 connection 에서 출력도 하도록 설정
+
+            conn.setRequestProperty("Authorization", "Bearer " + tokenProvider.getToken());
+            // 응답 내용(BODY) 구하기
+            InputStream inputStream = conn.getInputStream();
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream), 8 * 1024);
+            String line = null;
+            StringBuffer buff = new StringBuffer();
+
+            while ((line = in.readLine()) != null) {
+                buff.append(line + "\n");
+            }
+            in.close();
+            result = buff.toString().trim();
+            // 접속 해제
+            conn.disconnect();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        try {
-            response = restTemplate.getForObject(getRequestString(), cls, new Object[] {});
-        } catch (HttpClientErrorException e) {
-            if (e.getStatusCode().equals(HttpStatus.UNAUTHORIZED))
-            tokenHolder.setInvalid(true);
-            context.setFaulty(true);
-        }
-        return response;
-    }
-    
-    private String getRequestString() {
-        String result = new String(url);
-        
-        if (request != null) {
-            result += request.toRequestQuery();
-        }
-        
         return result;
     }
     
@@ -83,7 +71,5 @@ public class GenericRestGetCall<RQ extends BaseDomainRequest> {
         this.url = url;
     }
     
-    public void setRequest(RQ request) {
-        this.request = request;
-    }
+
 }
