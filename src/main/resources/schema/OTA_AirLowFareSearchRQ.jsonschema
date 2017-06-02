@@ -1,0 +1,5424 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ",
+  "type": "object",
+  "properties": {
+    "OTA_AirLowFareSearchRQ": {
+      "type": "object",
+      "properties": {
+        "POS": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.POSType"
+        },
+        "OriginDestinationInformation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.OriginDestinationInformation"
+          }
+        },
+        "Leg": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg"
+          }
+        },
+        "TravelPreferences": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType"
+        },
+        "TravelerInfoSummary": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryType"
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions"
+        },
+        "DirectFlightsOnly": {
+          "type": "boolean"
+        },
+        "AvailableFlightsOnly": {
+          "type": "boolean"
+        },
+        "ResponseType": {
+          "type": "string"
+        },
+        "ResponseVersion": {
+          "type": "string"
+        },
+        "SeparateMessages": {
+          "type": "boolean"
+        },
+        "TruncateMessages": {
+          "type": "boolean"
+        },
+        "EchoToken": {
+          "type": "string"
+        },
+        "TimeStamp": {
+          "type": "string"
+        },
+        "Target": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        },
+        "TransactionIdentifier": {
+          "type": "string"
+        },
+        "SequenceNmbr": {
+          "type": "string"
+        },
+        "TransactionStatusCode": {
+          "type": "string"
+        },
+        "PrimaryLangID": {
+          "type": "string"
+        },
+        "AltLangID": {
+          "type": "string"
+        },
+        "MaxResponses": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "definitions": {
+    "org.opentravel.ota._2003._05.POSType": {
+      "type": "object",
+      "properties": {
+        "Source": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.SourceType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.SourceType": {
+      "type": "object",
+      "properties": {
+        "RequestorID": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.UniqueIDType"
+        },
+        "Position": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PositionType"
+        },
+        "BookingChannel": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SourceBookingChannelType"
+        },
+        "AgentCity": {
+          "type": "string"
+        },
+        "Carrier": {
+          "type": "string"
+        },
+        "MainTravelAgencyPCC": {
+          "type": "string"
+        },
+        "HomePCC": {
+          "type": "string"
+        },
+        "AgentSine": {
+          "type": "string"
+        },
+        "PseudoCityCode": {
+          "type": "string"
+        },
+        "ISOCountry": {
+          "type": "string"
+        },
+        "ISOCurrency": {
+          "type": "string"
+        },
+        "AgentDutyCode": {
+          "type": "string"
+        },
+        "AirlineVendorID": {
+          "type": "string"
+        },
+        "AirportCode": {
+          "type": "string"
+        },
+        "FirstDepartPoint": {
+          "type": "string"
+        },
+        "ERSP_UserID": {
+          "type": "string"
+        },
+        "PersonalCityCode": {
+          "type": "string"
+        },
+        "AccountingCode": {
+          "type": "string"
+        },
+        "OfficeCode": {
+          "type": "string"
+        },
+        "DefaultTicketingCarrier": {
+          "type": "string"
+        },
+        "AirlineChannelCode": {
+          "type": "string"
+        },
+        "AgentDepartmentCode": {
+          "type": "string"
+        },
+        "AgentFunction": {
+          "type": "string"
+        },
+        "TravelAgencyIATA": {
+          "type": "string"
+        },
+        "HomeAgencyIATA": {
+          "type": "string"
+        },
+        "AgentIATA": {
+          "type": "string"
+        },
+        "VendorCRSCode": {
+          "type": "string"
+        },
+        "AgentDuty": {
+          "type": "string"
+        },
+        "AbacusUser": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.UniqueIDType": {
+      "type": "object",
+      "properties": {
+        "CompanyName": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.CompanyNameType"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Instance": {
+          "type": "string"
+        },
+        "ID_Context": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CompanyNameType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "CompanyShortName": {
+          "type": "string"
+        },
+        "TravelSector": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PositionType": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "string"
+        },
+        "Longitude": {
+          "type": "string"
+        },
+        "Altitude": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.SourceBookingChannelType": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        },
+        "Primary": {
+          "type": "boolean"
+        },
+        "CompanyName": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.CompanyNameType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.OriginDestinationInformation": {
+      "type": "object",
+      "properties": {
+        "DepartureDateTime": {
+          "type": "string"
+        },
+        "ArrivalDateTime": {
+          "type": "string"
+        },
+        "DepartureDates": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates"
+        },
+        "ArrivalDates": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates"
+        },
+        "DepartureWindow": {
+          "type": "string"
+        },
+        "ArrivalWindow": {
+          "type": "string"
+        },
+        "OriginLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OriginDestinationInformationType.OriginLocation"
+        },
+        "DestinationLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OriginDestinationInformationType.DestinationLocation"
+        },
+        "ConnectionLocations": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ConnectionType"
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.OriginDestinationInformation.TPAExtensions"
+        },
+        "RPH": {
+          "type": "string"
+        },
+        "Fixed": {
+          "type": "boolean"
+        },
+        "FullDiversity": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates": {
+      "type": "object",
+      "properties": {
+        "Day": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.Day"
+          }
+        },
+        "DaysRange": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.DaysRange"
+          }
+        },
+        "LengthOfStay": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates.LengthOfStay"
+          }
+        },
+        "LengthOfStayRange": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates.LengthOfStayRange"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.Day": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.DaysRange": {
+      "type": "object",
+      "properties": {
+        "FromDate": {
+          "type": "string"
+        },
+        "ToDate": {
+          "type": "string"
+        },
+        "WeekDays": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates.LengthOfStay": {
+      "type": "object",
+      "properties": {
+        "Days": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates.LengthOfStayRange": {
+      "type": "object",
+      "properties": {
+        "MinDays": {
+          "type": "integer"
+        },
+        "MaxDays": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates": {
+      "type": "object",
+      "properties": {
+        "Day": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.Day"
+          }
+        },
+        "DaysRange": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates.DaysRange"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OriginDestinationInformationType.OriginLocation": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "LocationCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "LocationType": {
+          "type": "string"
+        },
+        "AllAirports": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OriginDestinationInformationType.DestinationLocation": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "LocationCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "LocationType": {
+          "type": "string"
+        },
+        "AllAirports": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ConnectionType": {
+      "type": "object",
+      "properties": {
+        "ConnectionLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ConnectionType.ConnectionLocation"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ConnectionType.ConnectionLocation": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "LocationCode": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.OriginDestinationInformation.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "Flight": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OriginDestinationFlightType"
+          }
+        },
+        "Routing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RoutingDefinitionType"
+          }
+        },
+        "DateFlexibility": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.DateFlexibility"
+          }
+        },
+        "SisterDestinationLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestSpecifiedLocationType"
+          }
+        },
+        "SisterDestinationMileage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterDestinationMileage"
+        },
+        "SisterOriginLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestSpecifiedLocationType"
+          }
+        },
+        "SisterOriginMileage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterOriginMileage"
+        },
+        "SegmentType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SegmentType"
+        },
+        "AlternateTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.AlternateTime"
+        },
+        "MaxOneWayOptions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.MaxOneWayOptions"
+        },
+        "NumOneWayOptions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.NumOneWayOptions"
+        },
+        "CabinPref": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.CabinPrefType"
+        },
+        "ConnectionTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.ConnectionTime"
+        },
+        "TotalTravelTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.TotalTravelTime"
+        },
+        "IncludeVendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.IncludeVendorPrefType"
+          }
+        },
+        "IncludeAlliancePref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AllianceType"
+          }
+        },
+        "DepartureDays": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DepartureDaysType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OriginDestinationFlightType": {
+      "type": "object",
+      "properties": {
+        "OriginLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "DestinationLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "Airline": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirlineType"
+        },
+        "SideTrip": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SideTripType"
+        },
+        "Reservation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ReservationType"
+        },
+        "MileageDisplay": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.MileageDisplayType"
+          }
+        },
+        "BookingDateTime": {
+          "type": "string"
+        },
+        "Fare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FareOptionalDetailsType"
+        },
+        "PlusUp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PlusUpType"
+          }
+        },
+        "MarriageStatus": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Flown": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RequestLocationType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "LocationCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirlineType": {
+      "type": "object",
+      "properties": {
+        "Operating": {
+          "type": "string"
+        },
+        "Marketing": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.SideTripType": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "number"
+        },
+        "Start": {
+          "type": "boolean"
+        },
+        "End": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ReservationType": {
+      "type": "object",
+      "properties": {
+        "Status": {
+          "type": "string"
+        },
+        "RealStatus": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.MileageDisplayType": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Surcharge": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FareOptionalDetailsType": {
+      "type": "object",
+      "properties": {
+        "ComponentNo": {
+          "type": "number"
+        },
+        "BasisCode": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "Vendor": {
+          "type": "string"
+        },
+        "SourceVendor": {
+          "type": "string"
+        },
+        "Tariff": {
+          "type": "string"
+        },
+        "RuleNumber": {
+          "type": "string"
+        },
+        "BrandID": {
+          "type": "string"
+        },
+        "ProgramID": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PlusUpType": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "type": "number"
+        },
+        "OriginCity": {
+          "type": "string"
+        },
+        "DestinationCity": {
+          "type": "string"
+        },
+        "FareOriginCity": {
+          "type": "string"
+        },
+        "FareDestinationCity": {
+          "type": "string"
+        },
+        "ViaCity": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "CountryOfPayment": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RoutingDefinitionType": {
+      "type": "object",
+      "properties": {
+        "RoutingLeg": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RoutingLegType"
+          }
+        },
+        "AddWildcards": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RoutingLegType": {
+      "type": "object",
+      "properties": {
+        "InboundOutboundCarrier": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "InboundCarrier": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "OutboundCarrier": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ConnectPoint": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.DateFlexibility": {
+      "type": "object",
+      "properties": {
+        "NbrOfDays": {
+          "type": "integer"
+        },
+        "Plus": {
+          "type": "integer"
+        },
+        "Minus": {
+          "type": "integer"
+        },
+        "Validate": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RequestSpecifiedLocationType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "LocationCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "LocationType": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterDestinationMileage": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterOriginMileage": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SegmentType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.AlternateTime": {
+      "type": "object",
+      "properties": {
+        "PlusMinus": {
+          "type": "integer"
+        },
+        "Plus": {
+          "type": "integer"
+        },
+        "Minus": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.MaxOneWayOptions": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.NumOneWayOptions": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CabinPrefType": {
+      "type": "object",
+      "properties": {
+        "Cabin": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.ConnectionTime": {
+      "type": "object",
+      "properties": {
+        "Min": {
+          "type": "integer"
+        },
+        "Max": {
+          "type": "integer"
+        },
+        "ExcludedConnectionBegin": {
+          "type": "string"
+        },
+        "ExcludedConnectionEnd": {
+          "type": "string"
+        },
+        "EnableExcludedConnection": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.TotalTravelTime": {
+      "type": "object",
+      "properties": {
+        "Min": {
+          "type": "number"
+        },
+        "Max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.IncludeVendorPrefType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AllianceType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DepartureDaysType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg": {
+      "type": "object",
+      "properties": {
+        "DepartureDateTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.DepartureDateTime"
+        },
+        "ArrivalDateTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.GlobalDateTimeType"
+        },
+        "Origins": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Origins"
+        },
+        "Destinations": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Destinations"
+        },
+        "ConnectionLocations": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ConnectionType"
+        },
+        "Carriers": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Carriers"
+        },
+        "Cabin": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Cabin"
+        },
+        "RPH": {
+          "type": "string"
+        },
+        "MaxOptions": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.DepartureDateTime": {
+      "type": "object",
+      "properties": {
+        "TimeWindowStart": {
+          "type": "string"
+        },
+        "TimeWindowEnd": {
+          "type": "string"
+        },
+        "TimeTolerance": {
+          "type": "integer"
+        },
+        "DateFlexibility": {
+          "type": "integer"
+        },
+        "MaxOptionsPerDate": {
+          "type": "integer"
+        },
+        "ConnectionTimeMin": {
+          "type": "integer"
+        },
+        "ConnectionTimeMax": {
+          "type": "integer"
+        },
+        "DateTime": {
+          "type": "string"
+        },
+        "WeekDays": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.GlobalDateTimeType": {
+      "type": "object",
+      "properties": {
+        "TimeWindowStart": {
+          "type": "string"
+        },
+        "TimeWindowEnd": {
+          "type": "string"
+        },
+        "TimeTolerance": {
+          "type": "integer"
+        },
+        "DateFlexibility": {
+          "type": "integer"
+        },
+        "MaxOptionsPerDate": {
+          "type": "integer"
+        },
+        "ConnectionTimeMin": {
+          "type": "integer"
+        },
+        "ConnectionTimeMax": {
+          "type": "integer"
+        },
+        "DateTime": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Origins": {
+      "type": "object",
+      "properties": {
+        "Origin": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Origins.Origin"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Origins.Origin": {
+      "type": "object",
+      "properties": {
+        "AirportCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Destinations": {
+      "type": "object",
+      "properties": {
+        "Destination": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Destinations.Destination"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Destinations.Destination": {
+      "type": "object",
+      "properties": {
+        "AirportCode": {
+          "type": "string"
+        },
+        "AirportsGroup": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Carriers": {
+      "type": "object",
+      "properties": {
+        "IncludeVendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.IncludeVendorPrefType"
+          }
+        },
+        "ExcludeVendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Carriers.ExcludeVendorPref"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Carriers.ExcludeVendorPref": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.Leg.Cabin": {
+      "type": "object",
+      "properties": {
+        "PreferenceLevel": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType": {
+      "type": "object",
+      "properties": {
+        "VendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CompanyNamePrefType"
+          }
+        },
+        "VendorPrefApplicability": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.VendorPrefApplicabilityType"
+          }
+        },
+        "FlightTypePref": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlightTypePrefType"
+        },
+        "FareRestrictPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.FareRestrictPref"
+          }
+        },
+        "EquipPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.EquipmentTypePref"
+          }
+        },
+        "CabinPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CabinPrefType"
+          }
+        },
+        "TicketDistribPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TicketDistribPrefType"
+          }
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions"
+        },
+        "AncillaryFees": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.AncillaryFees"
+        },
+        "FrequentFlyer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.FrequentFlyer"
+          }
+        },
+        "SpanishFamilyDiscount": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.SpanishFamilyDiscount"
+        },
+        "Baggage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.Baggage"
+        },
+        "InterlineBrands": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.InterlineBrandsType"
+        },
+        "CommissionCodeQualifiers": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.CommissionCodeQualifiers"
+        },
+        "OnTimeRate": {
+          "type": "number"
+        },
+        "ETicketDesired": {
+          "type": "boolean"
+        },
+        "ValidInterlineTicket": {
+          "type": "boolean"
+        },
+        "MaxStopsQuantity": {
+          "type": "integer"
+        },
+        "UseAllFlights": {
+          "type": "boolean"
+        },
+        "AllFlightsData": {
+          "type": "boolean"
+        },
+        "Hybrid": {
+          "type": "boolean"
+        },
+        "SmokingAllowed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CompanyNamePrefType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "CompanyShortName": {
+          "type": "string"
+        },
+        "TravelSector": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.VendorPrefApplicabilityType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlightTypePrefType": {
+      "type": "object",
+      "properties": {
+        "FlightType": {
+          "type": "string"
+        },
+        "MaxConnections": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.FareRestrictPref": {
+      "type": "object",
+      "properties": {
+        "FareRestriction": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        },
+        "AdvResTicketing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AdvResTicketingType"
+        },
+        "StayRestrictions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.StayRestrictionsType"
+        },
+        "VoluntaryChanges": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.VoluntaryChangesType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AdvResTicketingType": {
+      "type": "object",
+      "properties": {
+        "AdvReservation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AdvResTicketingType.AdvReservation"
+        },
+        "AdvTicketing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AdvResTicketingType.AdvTicketing"
+        },
+        "AdvResInd": {
+          "type": "boolean"
+        },
+        "AdvTicketingInd": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AdvResTicketingType.AdvReservation": {
+      "type": "object",
+      "properties": {
+        "LatestTimeOfDay": {
+          "type": "string"
+        },
+        "LatestPeriod": {
+          "type": "string"
+        },
+        "LatestUnit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AdvResTicketingType.AdvTicketing": {
+      "type": "object",
+      "properties": {
+        "FromResTimeOfDay": {
+          "type": "string"
+        },
+        "FromResPeriod": {
+          "type": "string"
+        },
+        "FromResUnit": {
+          "type": "string"
+        },
+        "FromDepartTimeOfDay": {
+          "type": "string"
+        },
+        "FromDepartPeriod": {
+          "type": "string"
+        },
+        "FromDepartUnit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.StayRestrictionsType": {
+      "type": "object",
+      "properties": {
+        "MinimumStay": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.StayRestrictionsType.MinimumStay"
+        },
+        "MaximumStay": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.StayRestrictionsType.MaximumStay"
+        },
+        "StayRestrictionsInd": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.StayRestrictionsType.MinimumStay": {
+      "type": "object",
+      "properties": {
+        "ReturnTimeOfDay": {
+          "type": "string"
+        },
+        "MinStay": {
+          "type": "integer"
+        },
+        "StayUnit": {
+          "type": "string"
+        },
+        "MinStayDate": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.StayRestrictionsType.MaximumStay": {
+      "type": "object",
+      "properties": {
+        "ReturnType": {
+          "type": "string"
+        },
+        "ReturnTimeOfDay": {
+          "type": "string"
+        },
+        "MaxStay": {
+          "type": "integer"
+        },
+        "StayUnit": {
+          "type": "string"
+        },
+        "MaxStayDate": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.VoluntaryChangesType": {
+      "type": "object",
+      "properties": {
+        "Penalty": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.VoluntaryChangesType.Penalty"
+        },
+        "VolChangeInd": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.VoluntaryChangesType.Penalty": {
+      "type": "object",
+      "properties": {
+        "PenaltyType": {
+          "type": "string"
+        },
+        "DepartureStatus": {
+          "type": "string"
+        },
+        "Percent": {
+          "type": "number"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "DecimalPlaces": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.EquipmentTypePref": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "AirEquipType": {
+          "type": "string"
+        },
+        "ChangeofGauge": {
+          "type": "boolean"
+        },
+        "WideBody": {
+          "type": "boolean"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TicketDistribPrefType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "DistribType": {
+          "type": "string"
+        },
+        "TicketTime": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "DepartureWindow": {
+          "type": "string"
+        },
+        "ArrivalWindow": {
+          "type": "string"
+        },
+        "ExcludeVendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ExcludeVendorPref"
+          }
+        },
+        "IncludeAlliancePref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AllianceType"
+          }
+        },
+        "ExcludeAlliancePref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AllianceType"
+          }
+        },
+        "NumTrips": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.NumTripsType"
+        },
+        "AltCitiesCombinations": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AltCitiesCombinationsType"
+        },
+        "NumTripsWithRouting": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumTripsWithRouting"
+        },
+        "OnlineIndicator": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.OnlineIndicator"
+        },
+        "InterlineIndicator": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.InterlineIndicator"
+        },
+        "TripType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TripType"
+        },
+        "MaxPrice": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxPrice"
+        },
+        "ContentType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ContentType"
+        },
+        "DomesticLayoverTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DomesticLayoverTime"
+        },
+        "LongConnectTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LongConnectTime"
+        },
+        "LongConnectPoints": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LongConnectPoints"
+        },
+        "AirServiceOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AirServiceOnly"
+        },
+        "JetServiceOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.JetServiceOnly"
+        },
+        "SameConnectionAirportOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameConnectionAirportOnly"
+        },
+        "SameOriginAirportOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameOriginAirportOnly"
+        },
+        "SameTurnaroundAirportOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameTurnaroundAirportOnly"
+        },
+        "AircraftTypePenalty": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AircraftTypePenalty"
+        },
+        "AlternateAirportPenalty": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AlternateAirportPenalty"
+        },
+        "FareAmountThreshold": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FareAmountThreshold"
+        },
+        "numOfLowFareSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfLowFareSol"
+        },
+        "numOfMustPriceOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceOnlSol"
+        },
+        "numOfMustPriceInrlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceInrlSol"
+        },
+        "numOfMustPriceNStpOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStpOnlSol"
+        },
+        "numOfMustPriceNStpInrlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStpInrlSol"
+        },
+        "numOfMustPriceSStopOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceSStopOnlSol"
+        },
+        "stpPenaltyInUSD": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.StpPenaltyInUSD"
+        },
+        "durPenaltyInUSD": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DurPenaltyInUSD"
+        },
+        "depPenaltyInUSD": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DepPenaltyInUSD"
+        },
+        "maxAllowedMustPriceOveragePerCrr": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxAllowedMustPriceOveragePerCrr"
+        },
+        "fltOptMustPriceReuseLimit": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptMustPriceReuseLimit"
+        },
+        "upperBoundMustPriceFactorForNotNonStp": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundMustPriceFactorForNotNonStp"
+        },
+        "upperBoundLFSFactor": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundLFSFactor"
+        },
+        "numOfMustPriceNStp1StpOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStp1StpOnlSol"
+        },
+        "numOfMustPriceNStp1StpInrlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStp1StpInrlSol"
+        },
+        "upperBoundMustPriceFactorForNonStp": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundMustPriceFactorForNonStp"
+        },
+        "maxAllowedLFSOveragePerCrrPercent": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxAllowedLFSOveragePerCrrPercent"
+        },
+        "targetMinNumOfLFSOnlSolPerCrr": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TargetMinNumOfLFSOnlSolPerCrr"
+        },
+        "targetMinNumOfLFSTotOnlSolPercent": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TargetMinNumOfLFSTotOnlSolPercent"
+        },
+        "fltOptLFSReuseLimitForNonAVS": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptLFSReuseLimitForNonAVS"
+        },
+        "fltOptLFSReuseLimitForAVS": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptLFSReuseLimitForAVS"
+        },
+        "avsPenaltyCrrs": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AvsPenaltyCrrs"
+        },
+        "maxNumOfNonStpOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfNonStpOnlSol"
+        },
+        "maxNumOfNonStpInrlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfNonStpInrlSol"
+        },
+        "maxNumOfSingleStpOnlSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfSingleStpOnlSol"
+        },
+        "maxNumOf2PlusStpSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOf2PlusStpSol"
+        },
+        "minAllowedOveragePerCrrPercent": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MinAllowedOveragePerCrrPercent"
+        },
+        "minAllowedOveragePerCrr": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MinAllowedOveragePerCrr"
+        },
+        "maxRelFareLvlOfxForNonStp": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxRelFareLvlOfxForNonStp"
+        },
+        "maxRelFareLvlOfxForCnx": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxRelFareLvlOfxForCnx"
+        },
+        "numOfMustPrice2PlusStpSol": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPrice2PlusStpSol"
+        },
+        "ItineraryNumberThreshold": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ItineraryNumberThreshold"
+        },
+        "XOFares": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.XOFaresType"
+        },
+        "ExemptAllTaxes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxes"
+        },
+        "ExemptAllTaxesAndFees": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxesAndFees"
+        },
+        "Taxes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.Taxes"
+        },
+        "ExemptTax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TaxCodeType"
+          }
+        },
+        "FlightStopsAsConnections": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlightStopsAsConnectionsType"
+        },
+        "TicketingSumOfLocals": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TicketingSumOfLocals"
+        },
+        "MultiAirportCodes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MultiAirportCodes"
+        },
+        "JumpCabinLogic": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.JumpCabinLogicType"
+        },
+        "KeepSameCabin": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.KeepSameCabinType"
+        },
+        "GoverningCarrierOverride": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.GoverningCarrierOverrideType"
+        },
+        "ExcludeCallDirectCarriers": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ExcludeCallDirectCarriers"
+        },
+        "ValidatingCarrier": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ValidatingCarrierType"
+        },
+        "ValidatingCarrierCheck": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck"
+        },
+        "SettlementMethod": {
+          "type": "string"
+        },
+        "FlightRepeatLimit": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FlightRepeatLimit"
+        },
+        "FlexibleFares": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType"
+        },
+        "DiversityParameters": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters"
+        },
+        "AdditionalFareLimit": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AdditionalFareLimit"
+        },
+        "FareFocusRules": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FareFocusRules"
+        },
+        "SellingLevels": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels"
+        },
+        "Budget": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.Budget"
+        },
+        "OptionsPerDatePairList": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.OptionsPerDatePairList"
+        },
+        "CountryPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.CountryPref"
+          }
+        },
+        "RetailerRules": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RetailerRulesType"
+        },
+        "ForceKeywordRestrictedContent": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ForceKeywordRestrictedContent"
+        },
+        "FlightRestrictions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FlightRestrictions"
+        },
+        "LowCostCarriersProcessing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LowCostCarriersProcessing"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ExcludeVendorPref": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.NumTripsType": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "number"
+        },
+        "PerDateMin": {
+          "type": "integer"
+        },
+        "PerDateMax": {
+          "type": "integer"
+        },
+        "PerMarket": {
+          "type": "integer"
+        },
+        "PerMonth": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AltCitiesCombinationsType": {
+      "type": "object",
+      "properties": {
+        "Origins": {
+          "type": "string"
+        },
+        "Destinations": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumTripsWithRouting": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.OnlineIndicator": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.InterlineIndicator": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TripType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxPrice": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ContentType": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DomesticLayoverTime": {
+      "type": "object",
+      "properties": {
+        "Hours": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LongConnectTime": {
+      "type": "object",
+      "properties": {
+        "Min": {
+          "type": "number"
+        },
+        "Max": {
+          "type": "number"
+        },
+        "Enable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LongConnectPoints": {
+      "type": "object",
+      "properties": {
+        "Min": {
+          "type": "number"
+        },
+        "Max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AirServiceOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.JetServiceOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameConnectionAirportOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameOriginAirportOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SameTurnaroundAirportOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AircraftTypePenalty": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AlternateAirportPenalty": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FareAmountThreshold": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfLowFareSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceInrlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStpOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStpInrlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceSStopOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.StpPenaltyInUSD": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DurPenaltyInUSD": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DepPenaltyInUSD": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxAllowedMustPriceOveragePerCrr": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptMustPriceReuseLimit": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundMustPriceFactorForNotNonStp": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundLFSFactor": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStp1StpOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPriceNStp1StpInrlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.UpperBoundMustPriceFactorForNonStp": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxAllowedLFSOveragePerCrrPercent": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TargetMinNumOfLFSOnlSolPerCrr": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TargetMinNumOfLFSTotOnlSolPercent": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptLFSReuseLimitForNonAVS": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FltOptLFSReuseLimitForAVS": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AvsPenaltyCrrs": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfNonStpOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfNonStpInrlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOfSingleStpOnlSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxNumOf2PlusStpSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MinAllowedOveragePerCrrPercent": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MinAllowedOveragePerCrr": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxRelFareLvlOfxForNonStp": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MaxRelFareLvlOfxForCnx": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.NumOfMustPrice2PlusStpSol": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ItineraryNumberThreshold": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.XOFaresType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxes": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxesAndFees": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.Taxes": {
+      "type": "object",
+      "properties": {
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TaxCodeAmountType"
+          }
+        },
+        "IsRefundable": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TaxCodeType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TaxCodeAmountType": {
+      "type": "object",
+      "properties": {
+        "TaxCode": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TaxCodeType": {
+      "type": "object",
+      "properties": {
+        "TaxCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlightStopsAsConnectionsType": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.TicketingSumOfLocals": {
+      "type": "object",
+      "properties": {
+        "Enable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.MultiAirportCodes": {
+      "type": "object",
+      "properties": {
+        "EnableOpenJaw": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.JumpCabinLogicType": {
+      "type": "object",
+      "properties": {
+        "Disabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.KeepSameCabinType": {
+      "type": "object",
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.GoverningCarrierOverrideType": {
+      "type": "object",
+      "properties": {
+        "AirlineCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ExcludeCallDirectCarriers": {
+      "type": "object",
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ValidatingCarrierType": {
+      "type": "object",
+      "properties": {
+        "Preference": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ValidatingCarrierType.Preference"
+          }
+        },
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ValidatingCarrierType.Preference": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "Level": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck": {
+      "type": "object",
+      "properties": {
+        "SettlementValidation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.SettlementValidation"
+        },
+        "IETValidation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.IETValidation"
+        },
+        "Carrier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.Carrier"
+          }
+        },
+        "Country": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.Country"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.SettlementValidation": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.IETValidation": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.Carrier": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ValidatingCarrierCheck.Country": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FlightRepeatLimit": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType": {
+      "type": "object",
+      "properties": {
+        "FareParameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters": {
+      "type": "object",
+      "properties": {
+        "ExcludeRestricted": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.ExcludeRestricted"
+        },
+        "ResTicketing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.ResTicketing"
+        },
+        "MinMaxStay": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.MinMaxStay"
+        },
+        "RefundPenalty": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.RefundPenalty"
+        },
+        "PublicFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PublicFare"
+        },
+        "PrivateFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PrivateFare"
+        },
+        "Cabin": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.Cabin"
+        },
+        "PassengerType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PassengerType"
+        },
+        "NegotiatedFaresOnly": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.NegotiatedFaresOnly"
+        },
+        "XOFares": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.XOFares"
+        },
+        "PassengerTypeQuantity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType"
+          }
+        },
+        "JumpCabinLogic": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.JumpCabinLogicType"
+        },
+        "KeepSameCabin": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.KeepSameCabinType"
+        },
+        "VoluntaryChanges": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.VoluntaryChangesSMPType"
+        },
+        "CorporateID": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.CorporateID"
+          }
+        },
+        "AccountCode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.AccountCode"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.ExcludeRestricted": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.ResTicketing": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.MinMaxStay": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.RefundPenalty": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PublicFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PrivateFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.Cabin": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.PassengerType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.NegotiatedFaresOnly": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.XOFares": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType": {
+      "type": "object",
+      "properties": {
+        "Age": {
+          "type": "integer"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "URI": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "integer"
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions"
+        },
+        "Changeable": {
+          "type": "boolean"
+        },
+        "Index": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "BirthDate": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.BirthDate"
+        },
+        "Age": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.Age"
+        },
+        "State": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.State"
+        },
+        "TotalNumber": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.TotalNumber"
+        },
+        "VoluntaryChanges": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.VoluntaryChangesSMPType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.BirthDate": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.Age": {
+      "type": "object",
+      "properties": {
+        "Years": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.State": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PassengerTypeQuantityType.TPAExtensions.TotalNumber": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.VoluntaryChangesSMPType": {
+      "type": "object",
+      "properties": {
+        "Penalty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.VoluntaryChangesSMPType.Penalty"
+          }
+        },
+        "Match": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.VoluntaryChangesSMPType.Penalty": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        },
+        "Exclude": {
+          "type": "boolean"
+        },
+        "Application": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "DecimalPlaces": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.CorporateID": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.FlexibleFaresType.FareParameters.AccountCode": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters": {
+      "type": "object",
+      "properties": {
+        "Weightings": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.Weightings"
+        },
+        "TimeOfDayDistribution": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.TimeOfDayDistribution"
+        },
+        "InboundOutboundPairing": {
+          "type": "integer"
+        },
+        "AdditionalNonStopsNumber": {
+          "type": "integer"
+        },
+        "AdditionalNonStopsPercentage": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.Weightings": {
+      "type": "object",
+      "properties": {
+        "PriceWeight": {
+          "type": "integer"
+        },
+        "TravelTimeWeight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.TimeOfDayDistribution": {
+      "type": "object",
+      "properties": {
+        "TimeOfDayRange": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.TimeOfDayDistribution.TimeOfDayRange"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.DiversityParameters.TimeOfDayDistribution.TimeOfDayRange": {
+      "type": "object",
+      "properties": {
+        "Begin": {
+          "type": "string"
+        },
+        "End": {
+          "type": "string"
+        },
+        "Percentage": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.AdditionalFareLimit": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FareFocusRules": {
+      "type": "object",
+      "properties": {
+        "Exclude": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels": {
+      "type": "object",
+      "properties": {
+        "SellingLevelRules": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels.SellingLevelRules"
+        },
+        "ShowFareAmounts": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels.ShowFareAmounts"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels.SellingLevelRules": {
+      "type": "object",
+      "properties": {
+        "Ignore": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.SellingLevels.ShowFareAmounts": {
+      "type": "object",
+      "properties": {
+        "Original": {
+          "type": "boolean"
+        },
+        "Adjusted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.Budget": {
+      "type": "object",
+      "properties": {
+        "MinimumPrice": {
+          "type": "string"
+        },
+        "MaximumPrice": {
+          "type": "string"
+        },
+        "RelativePriceThreshold": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.OptionsPerDatePairList": {
+      "type": "object",
+      "properties": {
+        "OptionsPerDatePair": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OptionsPerDatePairType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OptionsPerDatePairType": {
+      "type": "object",
+      "properties": {
+        "Departure": {
+          "type": "string"
+        },
+        "Return": {
+          "type": "string"
+        },
+        "Min": {
+          "type": "integer"
+        },
+        "Max": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.CountryPref": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RetailerRulesType": {
+      "type": "object",
+      "properties": {
+        "RetailerRule": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RetailerRulesType.RetailerRule"
+          }
+        },
+        "Force": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.RetailerRulesType.RetailerRule": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.ForceKeywordRestrictedContent": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.FlightRestrictions": {
+      "type": "object",
+      "properties": {
+        "AvoidLastFlight": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.TPAExtensions.LowCostCarriersProcessing": {
+      "type": "object",
+      "properties": {
+        "Disable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.AncillaryFees": {
+      "type": "object",
+      "properties": {
+        "AncillaryFeeGroup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.AncillaryFees.AncillaryFeeGroup"
+          }
+        },
+        "Enable": {
+          "type": "boolean"
+        },
+        "Summary": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.AncillaryFees.AncillaryFeeGroup": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.FrequentFlyer": {
+      "type": "object",
+      "properties": {
+        "Status": {
+          "type": "number"
+        },
+        "AirlineCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.SpanishFamilyDiscount": {
+      "type": "object",
+      "properties": {
+        "Level": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.Baggage": {
+      "type": "object",
+      "properties": {
+        "RequestType": {
+          "type": "string",
+          "enum": [
+            "N",
+            "C",
+            "A"
+          ]
+        },
+        "Description": {
+          "type": "boolean"
+        },
+        "RequestedPieces": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.InterlineBrandsType": {
+      "type": "object",
+      "properties": {
+        "Brand": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.BrandType"
+          }
+        },
+        "ChangeBrandForSoldout": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.BrandType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.CommissionCodeQualifiers": {
+      "type": "object",
+      "properties": {
+        "CommissionCodeQualifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AirSearchPrefsType.CommissionCodeQualifiers.CommissionCodeQualifier"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirSearchPrefsType.CommissionCodeQualifiers.CommissionCodeQualifier": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInfoSummaryType": {
+      "type": "object",
+      "properties": {
+        "SeatsRequested": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "AirTravelerAvail": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInformationType"
+          }
+        },
+        "PriceRequestInformation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType"
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType"
+        },
+        "SpecificPTC_Indicator": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInformationType": {
+      "type": "object",
+      "properties": {
+        "PassengerTypeQuantity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType"
+          }
+        },
+        "AirTraveler": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirTravelerType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirTravelerType": {
+      "type": "object",
+      "properties": {
+        "ProfileRef": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirTravelerType.ProfileRef"
+        },
+        "PersonName": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PersonNameType"
+        },
+        "Telephone": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TelephoneType"
+          }
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.EmailType"
+          }
+        },
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AddressType"
+          }
+        },
+        "CustLoyalty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CustLoyaltyType"
+          }
+        },
+        "Document": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.DocumentType"
+          }
+        },
+        "PassengerTypeQuantity": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PassengerTypeQuantityType"
+        },
+        "TravelerRefNumber": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerRefNumberType"
+        },
+        "FlightSegmentRPHs": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirTravelerType.FlightSegmentRPHs"
+        },
+        "BirthDate": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "PassengerTypeCode": {
+          "type": "string"
+        },
+        "AccompaniedByInfant": {
+          "type": "boolean"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirTravelerType.ProfileRef": {
+      "type": "object",
+      "properties": {
+        "UniqueID": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.UniqueIDType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PersonNameType": {
+      "type": "object",
+      "properties": {
+        "NamePrefix": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "GivenName": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "MiddleName": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SurnamePrefix": {
+          "type": "string"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "NameSuffix": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NameTitle": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NameType": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TelephoneType": {
+      "type": "object",
+      "properties": {
+        "FormattedInd": {
+          "type": "boolean"
+        },
+        "PhoneLocationType": {
+          "type": "string"
+        },
+        "PhoneTechType": {
+          "type": "string"
+        },
+        "CountryAccessCode": {
+          "type": "string"
+        },
+        "AreaCityCode": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "Extension": {
+          "type": "string"
+        },
+        "PIN": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.EmailType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "EmailType": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        },
+        "DefaultInd": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AddressType": {
+      "type": "object",
+      "properties": {
+        "StreetNmbr": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.StreetNmbrType"
+        },
+        "BldgRoom": {
+          "type": "string"
+        },
+        "AddressLine": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CityName": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "StateProv": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.StateProvType"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.CountryNameType"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "FormattedInd": {
+          "type": "boolean"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.StreetNmbrType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "PO_Box": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.StateProvType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "StateCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CountryNameType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CustLoyaltyType": {
+      "type": "object",
+      "properties": {
+        "ProgramID": {
+          "type": "string"
+        },
+        "MembershipID": {
+          "type": "string"
+        },
+        "TravelSector": {
+          "type": "string"
+        },
+        "RPH": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        },
+        "LoyalLevel": {
+          "type": "string"
+        },
+        "SignupDate": {
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "type": "string"
+        },
+        "ExpireDate": {
+          "type": "string"
+        },
+        "SingleVendorInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DocumentType": {
+      "type": "object",
+      "properties": {
+        "DocHolderName": {
+          "type": "string"
+        },
+        "DocLimitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DocIssueAuthority": {
+          "type": "string"
+        },
+        "DocIssueLocation": {
+          "type": "string"
+        },
+        "DocID": {
+          "type": "string"
+        },
+        "DocType": {
+          "type": "string"
+        },
+        "BirthDate": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "type": "string"
+        },
+        "ExpireDate": {
+          "type": "string"
+        },
+        "ShareSynchInd": {
+          "type": "string"
+        },
+        "ShareMarketInd": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerRefNumberType": {
+      "type": "object",
+      "properties": {
+        "RPH": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AirTravelerType.FlightSegmentRPHs": {
+      "type": "object",
+      "properties": {
+        "FlightSegmentRPH": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType": {
+      "type": "object",
+      "properties": {
+        "NegotiatedFareCode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.NegotiatedFareCode"
+          }
+        },
+        "AccountCode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.AccountCode"
+          }
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions"
+        },
+        "FareQualifier": {
+          "type": "string"
+        },
+        "NegotiatedFaresOnly": {
+          "type": "boolean"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "PricingSource": {
+          "type": "string"
+        },
+        "Reprice": {
+          "type": "boolean"
+        },
+        "ProcessThruFaresOnly": {
+          "type": "boolean"
+        },
+        "PurchaseDate": {
+          "type": "string"
+        },
+        "PurchaseTime": {
+          "type": "string"
+        },
+        "NetFaresUsed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.NegotiatedFareCode": {
+      "type": "object",
+      "properties": {
+        "Supplier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CompanyNameType"
+          }
+        },
+        "TPA_Extensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SecondaryCode": {
+          "type": "string"
+        },
+        "SupplierCode": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "CodeContext": {
+          "type": "string"
+        },
+        "URI": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.AccountCode": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "PublicFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PublicFare"
+        },
+        "PrivateFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PrivateFare"
+        },
+        "IATAFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.IATAFare"
+        },
+        "WebFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.WebFare"
+        },
+        "Priority": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority"
+        },
+        "Indicators": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators"
+        },
+        "PromoID": {
+          "type": "string"
+        },
+        "CustomerType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.CustomerType"
+        },
+        "MultipleTravelerGroups": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.MultipleTravelerGroups"
+        },
+        "BrandedFareIndicators": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.BrandedFareIndicators"
+        },
+        "PassengerStatus": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PassengerStatus"
+        },
+        "PointOfSaleOverride": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PointOfSaleOverrideType"
+        },
+        "PointOfTicketingOverride": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PointOfTicketingOverrideType"
+        },
+        "ApplyResidentDiscount": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ApplyResidentDiscountType"
+        },
+        "ETicketableOverride": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.ETicketableOverride"
+        },
+        "Currency": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Currency"
+        },
+        "UseReducedConstructions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.UseReducedConstructions"
+        },
+        "OBFees": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.OBFees"
+        },
+        "FareBreaksAtLegs": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.FareBreaksAtLegs"
+        },
+        "FareAdjustment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.FareAdjustment"
+          }
+        },
+        "ForceCompanion": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.ForceCompanion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PublicFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PrivateFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.IATAFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.WebFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority": {
+      "type": "object",
+      "properties": {
+        "Price": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Price"
+        },
+        "DirectFlights": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.DirectFlights"
+        },
+        "Time": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Time"
+        },
+        "Vendor": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Vendor"
+        },
+        "MarketingCarrier": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.MarketingCarrier"
+        },
+        "OperatingCarrier": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.OperatingCarrier"
+        },
+        "ElapsedTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.ElapsedTime"
+        },
+        "DepartureTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.DepartureTime"
+        },
+        "ConnectionTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.ConnectionTime"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Price": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.DirectFlights": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        },
+        "Leg": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Time": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.Vendor": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.MarketingCarrier": {
+      "type": "object",
+      "properties": {
+        "Carrier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.MarketingCarrier.Carrier"
+          }
+        },
+        "Priority": {
+          "type": "integer"
+        },
+        "Leg": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.MarketingCarrier.Carrier": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.OperatingCarrier": {
+      "type": "object",
+      "properties": {
+        "Carrier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.OperatingCarrier.Carrier"
+          }
+        },
+        "Priority": {
+          "type": "integer"
+        },
+        "Leg": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.OperatingCarrier.Carrier": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.ElapsedTime": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.DepartureTime": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        },
+        "Leg": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Priority.ConnectionTime": {
+      "type": "object",
+      "properties": {
+        "Priority": {
+          "type": "integer"
+        },
+        "Leg": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators": {
+      "type": "object",
+      "properties": {
+        "RetainFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.RetainFare"
+        },
+        "MinMaxStay": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.MinMaxStay"
+        },
+        "RefundPenalty": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.RefundPenalty"
+        },
+        "ResTicketing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.ResTicketing"
+        },
+        "TravelPolicy": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.TravelPolicy"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.RetainFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.MinMaxStay": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.RefundPenalty": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.ResTicketing": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Indicators.TravelPolicy": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.CustomerType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.MultipleTravelerGroups": {
+      "type": "object",
+      "properties": {
+        "ItinerariesPerGroup": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.BrandedFareIndicators": {
+      "type": "object",
+      "properties": {
+        "ReturnCheapestUnbrandedFare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.BrandedFareIndicators.ReturnCheapestUnbrandedFare"
+        },
+        "SingleBrandedFare": {
+          "type": "boolean"
+        },
+        "MultipleBrandedFares": {
+          "type": "boolean"
+        },
+        "ReturnBrandAncillaries": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.BrandedFareIndicators.ReturnCheapestUnbrandedFare": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.PassengerStatus": {
+      "type": "object",
+      "properties": {
+        "StateCode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "CityCode": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PointOfSaleOverrideType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PointOfTicketingOverrideType": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ApplyResidentDiscountType": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.ETicketableOverride": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.Currency": {
+      "type": "object",
+      "properties": {
+        "Dual": {
+          "type": "string"
+        },
+        "MOverride": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.UseReducedConstructions": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.OBFees": {
+      "type": "object",
+      "properties": {
+        "RType": {
+          "type": "boolean"
+        },
+        "TType": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.FareBreaksAtLegs": {
+      "type": "object",
+      "properties": {
+        "Ind": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.FareAdjustment": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Currency": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.PriceRequestInformationType.TPAExtensions.ForceCompanion": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType": {
+      "type": "object",
+      "properties": {
+        "TravelerRating": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating": {
+      "type": "object",
+      "properties": {
+        "Score": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating.Score"
+          }
+        },
+        "FrequentFlyer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating.FrequentFlyer"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating.Score": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "integer"
+        },
+        "Carrier": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TravelerInfoSummaryTPAExtensionsType.TravelerRating.FrequentFlyer": {
+      "type": "object",
+      "properties": {
+        "Tier": {
+          "type": "integer"
+        },
+        "Carrier": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "IntelliSellTransaction": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType"
+        },
+        "DiversityControl": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType"
+        },
+        "MessagingDetails": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MessagingDetails"
+        },
+        "AlternateAirportCities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities"
+          }
+        },
+        "AlternateAirportMileage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportMileage"
+        },
+        "AwardShopping": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AwardShoppingType"
+        },
+        "Billing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.BillingInformationType"
+        },
+        "ExchangeSettings": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeSettingsType"
+        },
+        "Exchange": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeType"
+          }
+        },
+        "SplitTaxes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.SplitTaxes"
+        },
+        "AlternateDatesProcessing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateDatesProcessing"
+        },
+        "ItineraryCache": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.ItineraryCache"
+        },
+        "MultiTicket": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MultiTicket"
+        },
+        "Partitions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.Partitions"
+        },
+        "ReservationData": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.ReservationData"
+        },
+        "AlternatePCC": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AlternatePCCType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType": {
+      "type": "object",
+      "properties": {
+        "RequestType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.RequestType"
+        },
+        "ServiceTag": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.ServiceTag"
+        },
+        "PurchaseType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.PurchaseType"
+        },
+        "SabreAth": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.SabreAth"
+        },
+        "TranID": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.TranID"
+        },
+        "ClientSessionID": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.ClientSessionID"
+        },
+        "Branch": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.Branch"
+        },
+        "CompressResponse": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.CompressResponse"
+        },
+        "FareOverrides": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.FareOverrides"
+        },
+        "Diagnostics": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.Diagnostics"
+        },
+        "SubagentData": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.SubagentData"
+        },
+        "ResponseSorting": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.ResponseSorting"
+        },
+        "SeatStatusSim": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SeatStatusSimType"
+        },
+        "AvailableLevel": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.AvailableLevel"
+        },
+        "ATSETest": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.ATSETest"
+        },
+        "Debug": {
+          "type": "boolean"
+        },
+        "DebugKey": {
+          "type": "string"
+        },
+        "ConfigSet": {
+          "type": "string"
+        },
+        "DisableCache": {
+          "type": "boolean"
+        },
+        "ChunkNumber": {
+          "type": "string"
+        },
+        "ShowItinSource": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.RequestType": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.ServiceTag": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.PurchaseType": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.SabreAth": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "BinarySecToken": {
+          "type": "string"
+        },
+        "ConversationID": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.TranID": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.ClientSessionID": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.Branch": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.CompressResponse": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.FareOverrides": {
+      "type": "object",
+      "properties": {
+        "FareOverride": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.FareOverrides.FareOverride"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.FareOverrides.FareOverride": {
+      "type": "object",
+      "properties": {
+        "VendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CompanyNamePrefType"
+          }
+        },
+        "TPA_Extensions": {
+          "type": "string"
+        },
+        "FareType": {
+          "type": "string"
+        },
+        "PseudoCityCode": {
+          "type": "string"
+        },
+        "CorporateID": {
+          "type": "string"
+        },
+        "Callable": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.Diagnostics": {
+      "type": "object",
+      "properties": {
+        "Diagnostic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.Diagnostics.Diagnostic"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.Diagnostics.Diagnostic": {
+      "type": "object",
+      "properties": {
+        "DiagnosticArgument": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TransactionType.Diagnostics.Diagnostic.DiagnosticArgument"
+          }
+        },
+        "TPA_Extensions": {
+          "type": "string"
+        },
+        "Target": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.Diagnostics.Diagnostic.DiagnosticArgument": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.SubagentData": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.ResponseSorting": {
+      "type": "object",
+      "properties": {
+        "EnableChronologicalSorting": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.SeatStatusSimType": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        },
+        "Command": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.AvailableLevel": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.TransactionType.ATSETest": {
+      "type": "object",
+      "properties": {
+        "Feature": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType": {
+      "type": "object",
+      "properties": {
+        "LowFareBucket": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.LowFareBucket"
+        },
+        "Dimensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.LowFareBucket": {
+      "type": "object",
+      "properties": {
+        "Options": {
+          "type": "string"
+        },
+        "FareCutOff": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions": {
+      "type": "object",
+      "properties": {
+        "TravelTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TravelTime"
+        },
+        "Carrier": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier"
+        },
+        "OperatingDuplicate": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.OperatingDuplicate"
+        },
+        "InboundOutboundPairing": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.InboundOutboundPairing"
+        },
+        "TimeOfDay": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay"
+        },
+        "StopsNumber": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.StopsNumber"
+        },
+        "PriceWeight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TravelTime": {
+      "type": "object",
+      "properties": {
+        "Weight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier": {
+      "type": "object",
+      "properties": {
+        "Default": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier.Default"
+        },
+        "Override": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier.Override"
+          }
+        },
+        "Weight": {
+          "type": "integer"
+        },
+        "OnlineIndicator": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier.Default": {
+      "type": "object",
+      "properties": {
+        "Options": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.Carrier.Override": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "Options": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.OperatingDuplicate": {
+      "type": "object",
+      "properties": {
+        "PreferredCarrier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.OperatingDuplicate.PreferredCarrier"
+          }
+        },
+        "Weight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.OperatingDuplicate.PreferredCarrier": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.InboundOutboundPairing": {
+      "type": "object",
+      "properties": {
+        "Weight": {
+          "type": "integer"
+        },
+        "Duplicates": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay": {
+      "type": "object",
+      "properties": {
+        "Distribution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay.Distribution"
+          }
+        },
+        "Weight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay.Distribution": {
+      "type": "object",
+      "properties": {
+        "Range": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay.Distribution.Range"
+          }
+        },
+        "Direction": {
+          "type": "string"
+        },
+        "Leg": {
+          "type": "integer"
+        },
+        "Endpoint": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.TimeOfDay.Distribution.Range": {
+      "type": "object",
+      "properties": {
+        "Begin": {
+          "type": "string"
+        },
+        "End": {
+          "type": "string"
+        },
+        "Options": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.DiversityControlType.Dimensions.StopsNumber": {
+      "type": "object",
+      "properties": {
+        "Weight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MessagingDetails": {
+      "type": "object",
+      "properties": {
+        "MDRSubset": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MessagingDetails.MDRSubset"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MessagingDetails.MDRSubset": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities": {
+      "type": "object",
+      "properties": {
+        "SpecifiedLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities.SpecifiedLocation"
+        },
+        "AlternateLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities.AlternateLocation"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities.SpecifiedLocation": {
+      "type": "object",
+      "properties": {
+        "LocationCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportCities.AlternateLocation": {
+      "type": "object",
+      "properties": {
+        "LocationCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateAirportMileage": {
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AwardShoppingType": {
+      "type": "object",
+      "properties": {
+        "Enable": {
+          "type": "boolean"
+        },
+        "UseRAS": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.BillingInformationType": {
+      "type": "object",
+      "properties": {
+        "UserStation": {
+          "type": "number"
+        },
+        "UserBranch": {
+          "type": "number"
+        },
+        "PartitionID": {
+          "type": "string"
+        },
+        "UserSetAddress": {
+          "type": "string"
+        },
+        "AAACity": {
+          "type": "string"
+        },
+        "AgentSineIn": {
+          "type": "string"
+        },
+        "ServiceName": {
+          "type": "string"
+        },
+        "ActionCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeSettingsType": {
+      "type": "object",
+      "properties": {
+        "RepriceCurrentItin": {
+          "type": "boolean"
+        },
+        "AttachExchangeInfo": {
+          "type": "boolean"
+        },
+        "ReissueExchange": {
+          "type": "string"
+        },
+        "BrandedResults": {
+          "type": "boolean"
+        },
+        "MIPTimeoutThreshold": {
+          "type": "number"
+        },
+        "RequestType": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeType": {
+      "type": "object",
+      "properties": {
+        "POS": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangePOSType"
+        },
+        "OriginDestinationInformation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType"
+          },
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType"
+        },
+        "Arunk": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ArunkType"
+          }
+        },
+        "TravelPreferences": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeAirSearchPrefsType"
+        },
+        "TravelerInfoSummary": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelerInfoSummaryType"
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTPAExtensionsType"
+        },
+        "BypassAdvancePurchaseOption": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeFareType": {
+      "type": "object",
+      "properties": {
+        "BaseFareAmount": {
+          "type": "number"
+        },
+        "NonRefundableAmount": {
+          "type": "number"
+        },
+        "BaseFareCurrency": {
+          "type": "string"
+        },
+        "FareCalcCurrency": {
+          "type": "string"
+        },
+        "ValidatingCarrier": {
+          "type": "string"
+        },
+        "ROE": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangePOSType": {
+      "type": "object",
+      "properties": {
+        "Source": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeSourceType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeSourceType": {
+      "type": "object",
+      "properties": {
+        "BookingChannel": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SourceBookingChannelType"
+        },
+        "AgentSine": {
+          "type": "string"
+        },
+        "PseudoCityCode": {
+          "type": "string"
+        },
+        "ISOCountry": {
+          "type": "string"
+        },
+        "ISOCurrency": {
+          "type": "string"
+        },
+        "AgentDutyCode": {
+          "type": "string"
+        },
+        "AirlineVendorID": {
+          "type": "string"
+        },
+        "AirportCode": {
+          "type": "string"
+        },
+        "FirstDepartPoint": {
+          "type": "string"
+        },
+        "ERSP_UserID": {
+          "type": "string"
+        },
+        "PersonalCityCode": {
+          "type": "string"
+        },
+        "AccountingCode": {
+          "type": "string"
+        },
+        "OfficeCode": {
+          "type": "string"
+        },
+        "DefaultTicketingCarrier": {
+          "type": "string"
+        },
+        "AirlineChannelCode": {
+          "type": "string"
+        },
+        "AgentDepartmentCode": {
+          "type": "string"
+        },
+        "AgentFunction": {
+          "type": "string"
+        },
+        "TravelAgencyIATA": {
+          "type": "string"
+        },
+        "HomeAgencyIATA": {
+          "type": "string"
+        },
+        "AgentIATA": {
+          "type": "string"
+        },
+        "VendorCRSCode": {
+          "type": "string"
+        },
+        "AgentDuty": {
+          "type": "string"
+        },
+        "AbacusUser": {
+          "type": "boolean"
+        },
+        "AgentCity": {
+          "type": "string"
+        },
+        "MainTravelAgencyPCC": {
+          "type": "string"
+        },
+        "Carrier": {
+          "type": "string"
+        },
+        "HostCarrier": {
+          "type": "string"
+        },
+        "ETicketCapable": {
+          "type": "boolean"
+        },
+        "CoHostID": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType": {
+      "type": "object",
+      "properties": {
+        "DepartureDateTime": {
+          "type": "string"
+        },
+        "ArrivalDateTime": {
+          "type": "string"
+        },
+        "DepartureDates": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.DepartureDates"
+        },
+        "ArrivalDates": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.TravelDateTimeType.ArrivalDates"
+        },
+        "DepartureWindow": {
+          "type": "string"
+        },
+        "ArrivalWindow": {
+          "type": "string"
+        },
+        "OriginLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OriginDestinationInformationType.OriginLocation"
+        },
+        "DestinationLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.OriginDestinationInformationType.DestinationLocation"
+        },
+        "ConnectionLocations": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ConnectionType"
+        },
+        "Flight": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType"
+          }
+        },
+        "DateFlexibility": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.DateFlexibility"
+          }
+        },
+        "SisterDestinationLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestSpecifiedLocationType"
+          }
+        },
+        "SisterDestinationMileage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterDestinationMileage"
+        },
+        "SisterOriginLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestSpecifiedLocationType"
+          }
+        },
+        "SisterOriginMileage": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SisterOriginMileage"
+        },
+        "SegmentType": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.SegmentType"
+        },
+        "AlternateTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.AlternateTime"
+        },
+        "MaxOneWayOptions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.MaxOneWayOptions"
+        },
+        "NumOneWayOptions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.NumOneWayOptions"
+        },
+        "CabinPref": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.CabinPrefType"
+        },
+        "ConnectionTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.ConnectionTime"
+        },
+        "TotalTravelTime": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationInformationType.TotalTravelTime"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType": {
+      "type": "object",
+      "properties": {
+        "OriginLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "DestinationLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "Airline": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AirlineType"
+        },
+        "SideTrip": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SideTripType"
+        },
+        "Reservation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ReservationType"
+        },
+        "MileageDisplay": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.MileageDisplayType"
+          }
+        },
+        "BookingDateTime": {
+          "type": "string"
+        },
+        "Fare": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType.Fare"
+        },
+        "PlusUp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.PlusUpType"
+          }
+        },
+        "Number": {
+          "type": "number"
+        },
+        "DepartureDateTime": {
+          "type": "string"
+        },
+        "ArrivalDateTime": {
+          "type": "string"
+        },
+        "MarriageStatus": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Flown": {
+          "type": "boolean"
+        },
+        "ClassOfService": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType.Fare": {
+      "type": "object",
+      "properties": {
+        "ComponentNo": {
+          "type": "number"
+        },
+        "BasisCode": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "BrandID": {
+          "type": "string"
+        },
+        "ProgramID": {
+          "type": "integer"
+        },
+        "Vendor": {
+          "type": "string"
+        },
+        "SourceVendor": {
+          "type": "string"
+        },
+        "Tariff": {
+          "type": "string"
+        },
+        "RuleNumber": {
+          "type": "string"
+        },
+        "Adjustment": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType.Fare.Adjustment"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeOriginDestinationFlightType.Fare.Adjustment": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Currency": {
+          "type": "string"
+        },
+        "Group": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ArunkType": {
+      "type": "object",
+      "properties": {
+        "OriginLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "DestinationLocation": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.RequestLocationType"
+        },
+        "SideTrip": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.SideTripType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeAirSearchPrefsType": {
+      "type": "object",
+      "properties": {
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType"
+        },
+        "ValidInterlineTicket": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType": {
+      "type": "object",
+      "properties": {
+        "ExemptAllTaxes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxes"
+        },
+        "ExemptAllTaxesAndFees": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.ExemptAllTaxesAndFees"
+        },
+        "Taxes": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.ExchangeTravelPreferencesTPAExtensionsType.Taxes"
+        },
+        "ExemptTax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.TaxCodeType"
+          }
+        },
+        "SettlementMethod": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.ExchangeTPAExtensionsType": {
+      "type": "object",
+      "properties": {
+        "AwardShopping": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AwardShoppingType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.SplitTaxes": {
+      "type": "object",
+      "properties": {
+        "ByLeg": {
+          "type": "boolean"
+        },
+        "ByFareComponent": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.AlternateDatesProcessing": {
+      "type": "object",
+      "properties": {
+        "CalendarMode": {
+          "type": "boolean"
+        },
+        "NumOptionsPerAlternateDate": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.ItineraryCache": {
+      "type": "object",
+      "properties": {
+        "PublicTimeToLive": {
+          "type": "number"
+        },
+        "RemovePreviousOnUpdate": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.MultiTicket": {
+      "type": "object",
+      "properties": {
+        "DisplayPolicy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.Partitions": {
+      "type": "object",
+      "properties": {
+        "Partition": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CachePartitionType"
+          }
+        },
+        "Group": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CachePartitionGroupType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CachePartitionType": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.CachePartitionGroupType": {
+      "type": "object",
+      "properties": {
+        "Partition": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.CachePartitionType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.OTAAirLowFareSearchRQ.TPAExtensions.ReservationData": {
+      "type": "object",
+      "properties": {
+        "DKNumber": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AlternatePCCType": {
+      "type": "object",
+      "properties": {
+        "TravelPreferences": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences"
+        },
+        "PseudoCityCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences": {
+      "type": "object",
+      "properties": {
+        "VendorPref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences.VendorPref"
+          }
+        },
+        "TPA_Extensions": {
+          "$ref": "#/definitions/org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences.TPAExtensions"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences.VendorPref": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "PreferLevel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "org.opentravel.ota._2003._05.AlternatePCCType.TravelPreferences.TPAExtensions": {
+      "type": "object",
+      "properties": {
+        "IncludeAlliancePref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AllianceType"
+          }
+        },
+        "ExcludeAlliancePref": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.opentravel.ota._2003._05.AllianceType"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

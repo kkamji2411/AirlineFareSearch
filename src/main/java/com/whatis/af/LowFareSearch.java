@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -32,9 +33,9 @@ public class LowFareSearch {
     public String flight(){
         return "flight";
     }
-    @RequestMapping("/flight/lowFareSearch")
+    @RequestMapping(value = "/flight/lowFareSearch", method={RequestMethod.POST},consumes = {"application/json"})
     @ResponseBody
-    public String lowFareSearch(/*@RequestBody BargainFinderMaxRequest bargainFinderMaxRequest*/) throws JsonProcessingException {
+    public String lowFareSearch(/*@RequestBody LowFareSearchRQ lowFareSearchRQ*/) throws JsonProcessingException {
 
         //BfmResponse
 
