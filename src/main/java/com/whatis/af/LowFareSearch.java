@@ -31,10 +31,12 @@ public class LowFareSearch {
 
     @Value("${sabre.endpoint}")
     private String endPoint;
+
     @RequestMapping("/flight")
     public String flight(){
         return "flight";
     }
+
     @RequestMapping(value = "/flight/lowFareSearch", method={RequestMethod.POST},consumes = {"application/json"})
     @ResponseBody
     public String lowFareSearch(@RequestBody LowFareSearchRQ lowFareSearchRQ) throws JsonProcessingException {

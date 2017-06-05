@@ -14,10 +14,6 @@ import java.util.Map;
  * Created by sungji on 2017-06-02.
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-@JsonPropertyOrder({
-        "OriginDestinationInformation",
-        "PassengerTypeQuantity"
-})
 public class LowFareSearchRQ implements Serializable {
 
     @JsonProperty("OriginDestinationInformation")
@@ -48,7 +44,7 @@ public class LowFareSearchRQ implements Serializable {
         this.passengerTypeQuantity = passengerTypeQuantity;
     }
 
-    @JsonAnyGetter
+  /*  @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
@@ -56,6 +52,6 @@ public class LowFareSearchRQ implements Serializable {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
-    }
+    }*/
 
 }

@@ -7,7 +7,7 @@ var myApp = angular.module('myApp',[]);
 myApp.controller('LowFareSearchController', ['$scope', function($scope) {
     var app = this;
     $scope.testmsg = "angularjs msg 노출 테스트";
-    app.model = {
+    app.lowFareSearchRQ = {
         "OriginDestinationInformation":[
             {
                 "DepartureDateTime":"20170701",
@@ -38,10 +38,19 @@ myApp.controller('LowFareSearchController', ['$scope', function($scope) {
         $.ajax({
             type:'POST',
             url:'/flight/lowFareSearch',
-            data:JSON.stringify({ lowFareSearchRQ:this.model}),
+            data:JSON.stringify( this.lowFareSearchRQ ),
+            //data:JSON.stringify( { "lowFareSearchRQ":this.lowFareSearchRQ }),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
+            cache: false,
+            timeout: 600000,
+            success: function(data){
+                console.log("SUCCESS : ", data);
+            }, error: function(e){
+                console.log("ERROR : ", e);
+            }
         });
     };
 }]);
+
 
