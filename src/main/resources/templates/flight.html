@@ -23,7 +23,7 @@
 
 </head>
 <body>
-<div class="container-fluid" ng-controller="LowFareSearchController">
+<div class="container-fluid" ng-controller="LowFareSearchController as low">
     {{ testmsg }}
     <form>
         <div class="form-group">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="col-3">
-                <button class="btn btn-primary" type="submit">검색</button>
+                <button class="btn btn-primary" type="submit" ng-click="low.search()">검색</button>
             </div>
 
         </div>

@@ -2,6 +2,7 @@ package com.whatis.af;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatis.af.model.LowFareSearchRQ;
 import com.whatis.af.model.bargainfindermax.BargainFinderMaxRequest;
 import com.whatis.af.service.BfmRequestServiceImpl;
 import com.whatis.af.service.GenericRestPostCall;
@@ -9,6 +10,7 @@ import com.whatis.af.service.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,11 +37,11 @@ public class LowFareSearch {
     }
     @RequestMapping(value = "/flight/lowFareSearch", method={RequestMethod.POST},consumes = {"application/json"})
     @ResponseBody
-    public String lowFareSearch(/*@RequestBody LowFareSearchRQ lowFareSearchRQ*/) throws JsonProcessingException {
+    public String lowFareSearch(@RequestBody LowFareSearchRQ lowFareSearchRQ) throws JsonProcessingException {
 
         //BfmResponse
 
-        BargainFinderMaxRequest bargainFinderMaxRequest = bfmRequestService.generateRequest();
+        BargainFinderMaxRequest bargainFinderMaxRequest = bfmRequestService.generateRequest(lowFareSearchRQ);
         ObjectMapper mapper = new ObjectMapper();
         String rq = mapper.writeValueAsString(bargainFinderMaxRequest);
         call.setRequest(bargainFinderMaxRequest);

@@ -1,35 +1,61 @@
 package com.whatis.af.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.whatis.af.model.bargainfindermax.OriginDestinationInformation;
 import com.whatis.af.model.bargainfindermax.PassengerTypeQuantity;
 
+import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sungji on 2017-06-02.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class LowFareSearchRQ {
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+@JsonPropertyOrder({
+        "OriginDestinationInformation",
+        "PassengerTypeQuantity"
+})
+public class LowFareSearchRQ implements Serializable {
+
     @JsonProperty("OriginDestinationInformation")
-    private List<OriginDestinationInformation> originDestinationInformationList;
+    private List<OriginDestinationInformation> originDestinationInformation = null;
     @JsonProperty("PassengerTypeQuantity")
-    private List<PassengerTypeQuantity> passengerTypeQuantityList;
+    private List<PassengerTypeQuantity> passengerTypeQuantity = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = -3311743727937992609L;
 
-    public List<OriginDestinationInformation> getOriginDestinationInformationList() {
-        return originDestinationInformationList;
+    @JsonProperty("OriginDestinationInformation")
+    public List<OriginDestinationInformation> getOriginDestinationInformation() {
+        return originDestinationInformation;
     }
 
-    public void setOriginDestinationInformationList(List<OriginDestinationInformation> originDestinationInformationList) {
-        this.originDestinationInformationList = originDestinationInformationList;
+    @JsonProperty("OriginDestinationInformation")
+    public void setOriginDestinationInformation(List<OriginDestinationInformation> originDestinationInformation) {
+        this.originDestinationInformation = originDestinationInformation;
     }
 
-    public List<PassengerTypeQuantity> getPassengerTypeQuantityList() {
-        return passengerTypeQuantityList;
+    @JsonProperty("PassengerTypeQuantity")
+    public List<PassengerTypeQuantity> getPassengerTypeQuantity() {
+        return passengerTypeQuantity;
     }
 
-    public void setPassengerTypeQuantityList(List<PassengerTypeQuantity> passengerTypeQuantityList) {
-        this.passengerTypeQuantityList = passengerTypeQuantityList;
+    @JsonProperty("PassengerTypeQuantity")
+    public void setPassengerTypeQuantity(List<PassengerTypeQuantity> passengerTypeQuantity) {
+        this.passengerTypeQuantity = passengerTypeQuantity;
     }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

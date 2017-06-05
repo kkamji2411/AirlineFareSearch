@@ -1,6 +1,7 @@
 package com.whatis.af.service;
 
 
+import com.whatis.af.model.LowFareSearchRQ;
 import com.whatis.af.model.bargainfindermax.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,6 +68,44 @@ public class BfmRequestServiceImpl implements BfmRequestService{
         BargainFinderMaxRequest request = new BargainFinderMaxRequest()
                 .withOTAAirLowFareSearchRQ(new OTAAirLowFareSearchRQ()
                         .withOriginDestinationInformation(originDestinationInfos)
+                        .withPOS(pos)
+                        .withTPAExtensions(new TPAExtensions()
+                                .withIntelliSellTransaction(new IntelliSellTransaction()
+                                        .withRequestType(new RequestType()
+                                                .withName("50ITINS"))))
+                        .withTravelerInfoSummary(new TravelerInfoSummary()
+                                .withAirTravelerAvail(airTravelerAvails)));
+
+        return request;
+    }
+
+    @Override
+    public BargainFinderMaxRequest generateRequest(LowFareSearchRQ lowFareSearchRQ) {
+
+        List<Source> sourceList = new ArrayList<>();
+        Source source = new Source().withPseudoCityCode("F9CE")
+                .withRequestorID(new RequestorID()
+                                .withID("1")
+                                .withType("1")
+                        /*.withCompanyName(new CompanyName()
+                                .withCode("TN"))*/);
+        sourceList.add(source);
+        POS pos = new POS()
+                .withSource(sourceList);
+
+
+        /*List<PassengerTypeQuantity> passengerTypeQuantities = new ArrayList<>();
+        PassengerTypeQuantity ptQuantity = new PassengerTypeQuantity()
+                .withCode("ADT")
+                .withQuantity(1);
+        passengerTypeQuantities.add(ptQuantity);*/
+        List<AirTravelerAvail> airTravelerAvails = new ArrayList<>();
+        AirTravelerAvail atAvail = new AirTravelerAvail()
+                .withPassengerTypeQuantity(lowFareSearchRQ.getPassengerTypeQuantity());
+        airTravelerAvails.add(atAvail);
+        BargainFinderMaxRequest request = new BargainFinderMaxRequest()
+                .withOTAAirLowFareSearchRQ(new OTAAirLowFareSearchRQ()
+                        .withOriginDestinationInformation(lowFareSearchRQ.getOriginDestinationInformation())
                         .withPOS(pos)
                         .withTPAExtensions(new TPAExtensions()
                                 .withIntelliSellTransaction(new IntelliSellTransaction()

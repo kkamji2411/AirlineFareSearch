@@ -1,6 +1,7 @@
 package com.whatis.af.service;
 
 
+import com.whatis.af.model.LowFareSearchRQ;
 import com.whatis.af.model.bargainfindermax.BargainFinderMaxRequest;
 
 /**
@@ -8,5 +9,5 @@ import com.whatis.af.model.bargainfindermax.BargainFinderMaxRequest;
  */
 public interface BfmRequestService {
     public BargainFinderMaxRequest generateRequest();
-
+    public BargainFinderMaxRequest generateRequest(LowFareSearchRQ lowFareSearchRQ);
 }

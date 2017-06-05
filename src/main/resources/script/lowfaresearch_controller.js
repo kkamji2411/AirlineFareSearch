@@ -35,12 +35,11 @@ myApp.controller('LowFareSearchController', ['$scope', function($scope) {
     };
     app.search = function(){
 
-
         $.ajax({
             type:'POST',
             url:'/flight/lowFareSearch',
-            data:model,
-            contentType: 'application/json',
+            data:JSON.stringify({ lowFareSearchRQ:this.model}),
+            contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         });
     };
